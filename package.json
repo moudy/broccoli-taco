@@ -1,0 +1,22 @@
+{
+  "name": "broccoli-site",
+  "version": "0.0.0",
+  "description": "Broccoli based static site generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Moudy",
+  "license": "MIT",
+  "dependencies": {
+    "broccoli-browserify": "^0.1.0",
+    "broccoli-clean-css": "^0.2.0",
+    "broccoli-fingerprint": "0.0.3",
+    "broccoli-handlebars": "0.0.1",
+    "broccoli-merge-trees": "^0.1.4",
+    "broccoli-sass": "^0.2.1",
+    "broccoli-static-compiler": "^0.1.4",
+    "handlebars": "^2.0.0-alpha.4",
+    "walk-sync": "^0.1.2"
+  }
+}
