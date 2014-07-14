@@ -12,13 +12,14 @@
     "broccoli": "^0.12.3",
     "broccoli-browserify": "^0.1.0",
     "broccoli-clean-css": "^0.2.0",
-    "broccoli-fingerprint": "0.0.3",
+    "broccoli-fingerprint": "0.0.4",
     "broccoli-handlebars": "0.0.1",
     "broccoli-merge-trees": "^0.1.4",
     "broccoli-sass": "^0.2.1",
     "broccoli-static-compiler": "^0.1.4",
     "handlebars": "^2.0.0-alpha.4",
     "require-dir": "^0.1.0",
+    "rsvp": "^3.0.9",
     "walk-sync": "^0.1.2"
   }
 }
