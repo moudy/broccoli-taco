@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+process.title = 'broccoli-site';
+
+var resolve = require('resolve');
+
+var broccoliSitePath = resolve.sync('broccoli-site', {
+  basedir: process.cwd()
+});
+
+var broccoliSite = require(broccoliSitePath);
+broccoliSite.cli();
