@@ -1,3 +1,5 @@
-module.exports = {
-  title: 'Broccoli Site'
+module.exports = function () {
+  return {
+    title: 'Broccoli Site'
+  };
 };
