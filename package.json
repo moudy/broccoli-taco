@@ -21,6 +21,7 @@
     "broccoli-sane-watcher": "0.0.5",
     "broccoli-sass": "^0.2.1",
     "broccoli-static-compiler": "^0.1.4",
+    "chalk": "^0.5.1",
     "commander": "^2.3.0",
     "handlebars": "^2.0.0-alpha.4",
     "marked": "^0.3.2",
