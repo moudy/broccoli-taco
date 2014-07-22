@@ -1,0 +1,14 @@
+{
+  "laxcomma": true,
+  "expr": true,
+  "predef": [
+    "before",
+    "after",
+    "it",
+    "describe",
+    "beforeEach",
+    "afterEach",
+    "expect"
+  ]
+}
+
