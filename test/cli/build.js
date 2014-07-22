@@ -41,7 +41,7 @@ describe('broccoli-site build <destination>', function () {
     this.contactHTML = toString('contact/index.html');
   });
 
-  //after(rmDist);
+  after(rmDist);
 
   context('HTML', function () {
     it('builds the index page', test.contain('indexHTML', 'PAGES/INDEX'));
