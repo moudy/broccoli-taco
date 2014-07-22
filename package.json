@@ -24,6 +24,7 @@
     "chalk": "^0.5.1",
     "commander": "^2.3.0",
     "handlebars": "^2.0.0-alpha.4",
+    "marked": "^0.3.2",
     "ncp": "^0.6.0",
     "quick-temp": "^0.1.2",
     "require-dir": "^0.1.0",
