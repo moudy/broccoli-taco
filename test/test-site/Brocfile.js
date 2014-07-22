@@ -1,4 +1,4 @@
-var BroccoliSite = require('../index');
+var BroccoliSite = require('../../index');
 
 var site = new BroccoliSite();
 

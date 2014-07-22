@@ -9,7 +9,7 @@ var templatesPath = findup('templates');
 var defaultTemplatePath = path.join(templatesPath, 'default');
 var defaultTemplateFiles = walkSync(defaultTemplatePath);
 
-describe('broccoli site new', function () {
+describe('broccoli-site new <name>', function () {
 
   context('valid args', function () {
     var siteName = 'foo';
