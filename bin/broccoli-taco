@@ -2,14 +2,14 @@
 
 var resolve = require('resolve');
 
-resolve('broccoli-site', {
+resolve('broccoli-taco', {
   basedir: process.cwd()
-}, function(err, broccoliSitePath) {
-  var broccoliSite;
+}, function(err, broccoliTacoPath) {
+  var broccoliTaco;
   if (err) {
-    broccoliSite = require('../index');
+    broccoliTaco = require('../index');
   } else {
-    broccoliSite = require(broccoliSitePath);
+    broccoliTaco = require(broccoliTacoPath);
   }
-  broccoliSite.cli();
+  broccoliTaco.cli();
 });

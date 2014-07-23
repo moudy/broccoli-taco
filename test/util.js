@@ -8,7 +8,7 @@ exports.getTestTmpPath = function () {
 
 exports.execCli = function (command, done) {
   process.chdir(exports.getTestTmpPath());
-  exec('../../bin/broccoli-site '+command, done);
+  exec('../../bin/broccoli-taco '+command, done);
 };
 
 exports.exec = function (command, done) {

@@ -4,7 +4,7 @@
   "description": "Broccoli based static site generator",
   "main": "index.js",
   "bin": {
-    "broccoli-site": "./bin/broccoli-site"
+    "broccoli-taco": "./bin/broccoli-taco"
   },
   "scripts": {
     "test": "mocha"
