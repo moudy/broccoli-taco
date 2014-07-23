@@ -3,7 +3,7 @@
 git co gh-pages-dev
 rm -rf dist && broccoli-site build dist
 git co gh-pages
-ls | egrep -v "dist|node_modules" | xargs rm -rf
+ls | egrep -v "dist|node_modules|CNAME" | xargs rm -rf
 mv dist/* .
 git add -A
 git commit -m "update gh-pages"
