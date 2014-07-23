@@ -6,6 +6,7 @@ var exec = require('child_process').exec;
 var walkSync = require('walk-sync');
 
 var testAppPath = path.join(findup('test'), 'test-site');
+process.chdir(testAppPath);
 
 var test = {
   contain: function (key, expected) {
@@ -17,7 +18,6 @@ var test = {
   }
 };
 
-process.chdir(testAppPath);
 var destName = 'dist';
 var testAppPathDestPath = path.join(testAppPath, destName);
 
@@ -32,7 +32,7 @@ describe('broccoli-site build <destination>', function () {
   before(rmDist);
 
   before(function (done) {
-    exec('../../bin/broccoli-site build '+destName, done);
+    exec('BROCCOLI_SITE_ENV=production ../../bin/broccoli-site build '+destName, done);
   });
 
   before(function () {
