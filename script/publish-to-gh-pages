@@ -1,0 +1,11 @@
+#!/bin/sh
+
+git co gh-pages-dev
+broccoli-site build dist
+git co gh-pages
+ls | grep -v dist | xargs rm -rf
+mv dist/* .
+git add -A
+git commit -m "update gh-pages"
+git push origin gh-pages:gh-pages
+git co -
