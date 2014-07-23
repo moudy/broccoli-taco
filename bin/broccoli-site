@@ -1,4 +1,15 @@
 #!/usr/bin/env node
 
-var broccoliSite = require('broccoli-site');
-broccoliSite.cli();
+var resolve = require('resolve');
+
+resolve('broccoli-site', {
+  basedir: process.cwd()
+}, function(err, broccoliSitePath) {
+  var broccoliSite;
+  if (err) {
+    broccoliSite = require('../index');
+  } else {
+    broccoliSite = require(broccoliSitePath);
+  }
+  broccoliSite.cli();
+});
