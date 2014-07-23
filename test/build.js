@@ -6,6 +6,7 @@ var exec = require('child_process').exec;
 var walkSync = require('walk-sync');
 
 var testAppPath = path.join(findup('test'), 'test-site');
+process.chdir(testAppPath);
 
 var test = {
   contain: function (key, expected) {
@@ -17,7 +18,6 @@ var test = {
   }
 };
 
-process.chdir(testAppPath);
 var destName = 'dist';
 var testAppPathDestPath = path.join(testAppPath, destName);
 
@@ -32,7 +32,7 @@ describe('broccoli-site build <destination>', function () {
   before(rmDist);
 
   before(function (done) {
-    exec('../../bin/broccoli-site build '+destName, done);
+    exec('BROCCOLI_SITE_ENV=production ../../bin/broccoli-site build '+destName, done);
   });
 
   before(function () {
@@ -53,17 +53,17 @@ describe('broccoli-site build <destination>', function () {
     it('builds with partials', test.contain('indexHTML', 'PARTIALS/NAV'));
     it('builds with partials', test.contain('aboutHTML', 'PARTIALS/NAV'));
 
-    it('builds with link-to helper', test.contain('indexHTML', '<a href="/about">About</a>'));
-    it('builds with block link-to helper', test.contain('indexHTML', '<a href="/contact">Call Me Maybe</a>'));
+    it('builds with link-to helper', test.contain('indexHTML', '<a href="/foo/about">About</a>'));
+    it('builds with block link-to helper', test.contain('indexHTML', '<a href="/foo/contact">Call Me Maybe</a>'));
 
-    it('includes site.css on index page', test.contain('indexHTML', '<link href="/site'));
-    it('includes page.css on index page', test.contain('indexHTML', '<link href="/page'));
+    it('includes site.css on index page', test.contain('indexHTML', '<link href="/foo/site'));
+    it('includes page.css on index page', test.contain('indexHTML', '<link href="/foo/page'));
 
-    it('includes site.js on index page', test.contain('indexHTML', '<script src="/site'));
-    it('includes page.js on index page', test.contain('indexHTML', '<script src="/page'));
+    it('includes site.js on index page', test.contain('indexHTML', '<script src="/foo/site'));
+    it('includes page.js on index page', test.contain('indexHTML', '<script src="/foo/page'));
 
-    it('includes site.css on sub-page page', test.contain('aboutHTML', '<link href="/site'));
-    it('includes page.css on sub-page', test.contain('aboutHTML', '<link href="/about/page'));
+    it('includes site.css on sub-page page', test.contain('aboutHTML', '<link href="/foo/site'));
+    it('includes page.css on sub-page', test.contain('aboutHTML', '<link href="/foo/about/page'));
   });
 
   context('Data', function () {

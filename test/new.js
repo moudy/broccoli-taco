@@ -1,5 +1,5 @@
 var path = require('path');
-var util = require('../util');
+var util = require('./util');
 var macros = util.macros;
 var quickTemp = require('quick-temp');
 var findup = require('findup-sync');
