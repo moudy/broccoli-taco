@@ -1,7 +1,7 @@
 #!/bin/sh
 
 git co gh-pages-dev
-rm -rf dist && broccoli-site build dist
+rm -rf dist && broccoli-taco build dist
 git co gh-pages
 ls | egrep -v "dist|node_modules|CNAME" | xargs rm -rf
 mv dist/* .
