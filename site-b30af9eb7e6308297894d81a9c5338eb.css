@@ -1836,7 +1836,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-chunk {
   color: #aaa; }
 
-.text-color-brand-primary {
+.text-align-center {
   color: #7ed321; }
 
 .navbar-brand {
@@ -1855,3 +1855,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   margin-bottom: 30px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc; }
+  .hero .checklist {
+    display: inline-block; }
+
+.checklist {
+  text-align: left; }
+
+.footer {
+  padding: 30px 0; }
