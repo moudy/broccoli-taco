@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var resolve = require('resolve');
+
+resolve('broccoli-taco', {
+  basedir: process.cwd()
+}, function(err, broccoliTacoPath) {
+  var broccoliTaco;
+  if (err) {
+    broccoliTaco = require('../index');
+  } else {
+    broccoliTaco = require(broccoliTacoPath);
+  }
+  broccoliTaco.cli();
+});

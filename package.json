@@ -1,10 +1,10 @@
 {
-  "name": "broccoli-site",
-  "version": "0.0.2",
+  "name": "broccoli-taco",
+  "version": "0.0.0",
   "description": "Broccoli based static site generator",
   "main": "index.js",
   "bin": {
-    "broccoli-site": "./bin/broccoli-site"
+    "broccoli-taco": "./bin/broccoli-taco"
   },
   "scripts": {
     "test": "mocha"

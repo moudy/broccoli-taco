@@ -27,12 +27,12 @@ function toString (filepath) {
 
 function rmDist (done) { exec('rm -rf '+destName, done); }
 
-describe('broccoli-site build <destination>', function () {
+describe('broccoli-taco build <destination>', function () {
 
   before(rmDist);
 
   before(function (done) {
-    exec('BROCCOLI_SITE_ENV=production ../../bin/broccoli-site build '+destName, done);
+    exec('BROCCOLI_TACO_ENV=production ../../bin/broccoli-taco build '+destName, done);
   });
 
   before(function () {
