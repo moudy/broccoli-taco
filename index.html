@@ -6,14 +6,14 @@
     <title>Broccoli Site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-    <link href="/site-31cf9cde690c56687c45f0f4a4180153.css" rel="stylesheet" type="text/css">
+    <link href="/site-81230d44091b0a8567373f55b935fb8b.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <nav class='navbar navbar-default'>
   <div class='container'>
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
-        Broccoil Site
+        Broccoil Taco
       </a>
     </div>
 
@@ -38,38 +38,50 @@
 
   <div class='hero'>
   <div class='container'>
-    <h1>
-      Satic Sites Powered by Broccoli
-    </h1>
-    <h2>
-      Handlebars templates, SCSS &amp; Browserify
-    </h2>
+    <div class='row'>
+      <div class='col-sm-offset-2 col-sm-8'>
+        <h1>
+          Satic Sites Powered by Broccoli
+        </h1>
+        <h4>
+          Perfect for any site that needs to pull in external data at build time.
+        </h4>
+        <p>
+        Supports Handlebars templates (layouts/partials/helpers), SCSS, Browserify, asset fingerprinting, and generating pages dynamically based on data.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
-
-  <div id='getting-started' class='container'>
-    <h3 id="getting-started">Getting Started</h3>
-<pre><code class="lang-sh"><span class="hljs-comment"># install as a global package to make `broccoli-taco new` availble everywhere  </span>
-npm install -g broccoli-taco
-
-<span class="hljs-comment"># create a new site with some basic files and folders</span>
-broccoli-taco new my-site
-
-<span class="hljs-comment"># install dependencies</span>
-<span class="hljs-built_in">cd</span> my-site &amp;&amp; npm install
-
-<span class="hljs-comment"># run dev server</span>
-broccoli-taco serve
-
-<span class="hljs-comment"># Load index.html page</span>
-open http://localhost:<span class="hljs-number">4200</span>/
-
-<span class="hljs-comment"># build complete site into dist/ folder</span>
-broccoli-taco build dist
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm-offset-2 col-sm-8'>
+        <h3 id="getting-started">Getting Started</h3>
+<p>Install the command line utility globally via NPM. This makes <code>broccoli-taco new</code> available everywhere.</p>
+<pre><code class="lang-sh">npm install -g broccoli-taco
 </code></pre>
+<p>Then create a new site, install dependencies, and run development server.</p>
+<pre><code class="lang-sh">broccoli-taco new my-site
+<span class="hljs-built_in">cd</span> my-site &amp;&amp; npm install
+broccoli-taco serve
+</code></pre>
+<p>Your site shoud now be available at <a href="http://localhost:4200/">http://localhost:4200/</a>. You can start adding pages, assets, and data. To build your entire site into a folder you can run <code>broccoli-taco build &lt;folder-name&gt;</code>.</p>
 
-  </div>
+        <br>
+        <h3 id="motivation">Motivation</h3>
+<p>It’s a <a href="https://www.staticgen.com/">crowded market</a> – so why another static site generator?</p>
+<p><strong>Speed.</strong> Thanks to <a href="https://github.com/broccolijs/broccoli">Broccoli</a> re-generating the site is super fast. This makes for a really nice development process, especially when paired with livereload.</p>
+<p><strong>Simplicity.</strong> Each page is a folder. The only required file in a folder is an <code>index.hbs</code> file.</p>
+<p>The folder can optionally have a <code>page.scss</code> and <code>pages.js</code> file which get included on that page. The folder can also include a <code>data.js</code> file. The value of that file is available in the tmeplate as the <code>{{page}}</code> variable.</p>
+<p>There is also support for top level site-wide assets (<code>site.scss</code>, <code>site.js</code>) and data (<code>{{site}}</code> in the templates).</p>
+<p><strong>Flexibility.</strong> Each folder (which represents a page) can have a <code>data.js</code> (or <code>data.json</code>) file. The value of this file becomes the render context for the corresponding <code>index.hbs</code> file.</p>
+<p>This file can export an object literal or a function that returns an object. You can also return a Promise that resolves to an object allowing you to fetch remote data when the site is generated.</p>
+<p>If the retunred value of <code>data.js</code> is an array then multiple pages are created for each item in an array.</p>
+
+      </div>
+   </div>
+ </div>
 
 
     

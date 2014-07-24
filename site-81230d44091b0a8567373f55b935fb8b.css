@@ -219,8 +219,8 @@ body {
   font-family: "Proxima Nova", "Helvetica Neue";
   font-size: 14px;
   line-height: 1.42857;
-  color: #7F8B91;
-  background-color: #efefef; }
+  color: #444;
+  background-color: white; }
 
 input, button, select, textarea {
   font-family: inherit;
@@ -228,10 +228,10 @@ input, button, select, textarea {
   line-height: inherit; }
 
 a {
-  color: green;
+  color: #7ed321;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #003400;
+    color: #589117;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -256,7 +256,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857;
-  background-color: #efefef;
+  background-color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -295,10 +295,10 @@ hr {
   clip: auto; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Museo Slab";
-  font-weight: 400;
+  font-family: inherit;
+  font-weight: 500;
   line-height: 1.1;
-  color: #557a89; }
+  color: inherit; }
   h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .small, h5 small, h5 .small, h6 small, h6 .small, .h1 small, .h1 .small, .h2 small, .h2 .small, .h3 small, .h3 .small, .h4 small, .h4 .small, .h5 small, .h5 .small, .h6 small, .h6 .small {
     font-weight: normal;
     line-height: 1;
@@ -384,10 +384,10 @@ mark, .mark {
   color: #777777; }
 
 .text-primary {
-  color: green; }
+  color: #7ed321; }
 
 a.text-primary:hover {
-  color: #004d00; }
+  color: #65a71a; }
 
 .text-success {
   color: #3c763d; }
@@ -417,10 +417,10 @@ a.text-danger:hover {
   color: #fff; }
 
 .bg-primary {
-  background-color: green; }
+  background-color: #7ed321; }
 
 a.bg-primary:hover {
-  background-color: #004d00; }
+  background-color: #65a71a; }
 
 .bg-success {
   background-color: #dff0d8; }
@@ -1141,7 +1141,7 @@ pre {
         cursor: not-allowed; }
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: #eeeeee;
-    border-color: green; }
+    border-color: #7ed321; }
   .nav .nav-divider {
     height: 1px;
     margin: 9px 0;
@@ -1164,7 +1164,7 @@ pre {
         border-color: #eeeeee #eeeeee #ddd; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
       color: #555555;
-      background-color: #efefef;
+      background-color: white;
       border: 1px solid #ddd;
       border-bottom-color: transparent;
       cursor: default; }
@@ -1177,7 +1177,7 @@ pre {
     margin-left: 2px; }
   .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
-    background-color: green; }
+    background-color: #7ed321; }
 
 .nav-stacked > li {
   float: none; }
@@ -1214,7 +1214,7 @@ pre {
       border-bottom: 1px solid #ddd;
       border-radius: 4px 4px 0 0; }
     .nav-tabs-justified > .active > a, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > a:hover, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > a:focus, .nav-tabs-justified > .active > .nav-tabs.nav-justified, .nav-tabs-justified > .active > .nav-tabs.nav-justified {
-      border-bottom-color: #efefef; } }
+      border-bottom-color: white; } }
 
 .tab-content > .tab-pane {
   display: none; }
@@ -1455,9 +1455,9 @@ pre {
   background-color: white;
   border-color: white; }
   .navbar-default .navbar-brand {
-    color: green; }
+    color: #444; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-      color: #004d00;
+      color: #2b2b2b;
       background-color: transparent; }
   .navbar-default .navbar-text {
     color: #777; }
@@ -1836,9 +1836,22 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-chunk {
   color: #aaa; }
 
+.text-color-brand-primary {
+  color: #7ed321; }
+
+.navbar-brand {
+  background-image: url('/static/broccoli-taco-logo.svg');
+  background-size: 60% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-shadow: 0 1px 4px white; }
+
 .hero {
   padding-top: 40px;
   padding-bottom: 40px;
+  background-color: #f5f5f5;
+  text-align: center;
+  position: relative;
   margin-bottom: 30px;
-  background-color: white;
-  text-align: center; }
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; }
