@@ -2,10 +2,27 @@
 @import './css/vendor/bootstrap-custom';
 @import './css/vendor/syntax';
 
+.text-color-brand-primary {
+  color: $brand-primary;
+}
+
+.navbar-brand {
+  background-image: url('/static/broccoli-taco-logo.svg');
+  background-size: 60% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-shadow: 0 1px 4px white;
+}
+
 .hero {
   padding-top: 40px;
   padding-bottom: 40px;
-  margin-bottom: 30px;
   background-color: $hero-bg;
   text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
+
+
