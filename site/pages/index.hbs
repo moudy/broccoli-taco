@@ -2,10 +2,34 @@
 
   {{>index/hero}}
   <div class='container'>
-        {{markdown 'getting-started'}}
-        Check out {{#link-to 'documentation'}}the documentation{{/link-to}} for more details.
-        <br>
-        {{markdown 'motivation'}}
- </div>
+    <div class='row'>
+      <div class='col-md-8 col-md-offset-2'>
+        <div class='text-centered summary'>
+          {{#with page.summary}}
+            <h3>{{heading}}</h3>
+            <p class='text-big'>{{body}}</p>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class='row'>
+      {{#each page.points}}
+      <div class='col-sm-4 point'>
+        <h4>{{heading}}</h4>
+        <p>
+          {{#markdown}}{{{body}}}{{/markdown}}
+        </p>
+      </div>
+      {{/each}}
+
+    </div>
+    <hr />
+
+    <p class='text-big text-centered'>
+      View the {{#link-to 'documentation'}}documentation{{/link-to}} for more details.
+    </p>
+
+  </div>
 
 {{/layout}}

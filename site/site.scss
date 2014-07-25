@@ -2,8 +2,18 @@
 @import './css/vendor/bootstrap-custom';
 @import './css/vendor/syntax';
 
+html {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
 body {
   padding-top: $navbar-height;
+  font-weight: 200;
+}
+
+.text-big {
+  font-size: 18px;
 }
 
 .navbar-brand {
@@ -13,17 +23,18 @@ body {
   background-repeat: no-repeat;
   text-shadow: 0 1px 4px white;
   font-weight: 700;
+  font-family: $headings-font-family;
 }
 
 .navbar-toggle {
   &:active {
-    @include animation(__contactly-animate-btn-active 300ms cubic-bezier(.17,.67,.23,1.55) forwards);
+    @include animation(animate-btn-active 300ms cubic-bezier(.17,.67,.23,1.55) forwards);
   }
 }
 
 .hero {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 50px;
+  padding-bottom: 60px;
   background-color: $hero-bg;
   text-align: center;
   position: relative;
@@ -31,13 +42,21 @@ body {
   border-bottom: 1px solid $brand-primary;
   @include radial-gradient(circle at 50% 50%, #fff, lighten($brand-primary, 50%));
 
+  .tagline {
+    color: $brand-dark;
+  }
+
   .checklist, pre {
     display: inline-block;
   }
 
-  pre {
-    margin: 15px 0;
-    background-color: white;
+  .hero-install {
+    margin: 30px 0 20px;
+    color: $gray-light;
+    pre {
+      margin-bottom: 5px;
+      background-color: white;
+    }
   }
 }
 
@@ -49,11 +68,22 @@ body {
   line-height: 24px;
   padding: 0;
   margin: 0;
+  color: $brand-dark;
 }
 
 .checkmark {
   color: $brand-primary;
   text-shadow: 0 1px 2px white;
+}
+
+.summary {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.point {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .footer {
@@ -66,8 +96,11 @@ body {
   }
 }
 
-@include keyframes(__contactly-animate-btn-active) {
+@include keyframes(animate-btn-active) {
   0% { @include transform(scale(1)); }
   100% { @include transform(scale(0.9)); }
 }
 
+.text-centered {
+  text-align: center;
+}

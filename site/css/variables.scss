@@ -1,9 +1,10 @@
 // Customize bootstrap
-$brand-primary: #00c734;
+$brand-primary: #0ca300;
+$brand-dark: darken($brand-primary, 30%);
 $navbar-default-brand-color: $brand-primary;
-$font-family-base: Helvetica, arial, freesans, clean, sans-serif;
+$font-family-base: 'Helvetica Neue', Helvetica, arial, freesans, clean, sans-serif;
 $font-size-base: 15px;
-$text-color: #555;
+$text-color: #222;
 $body-bg: white;
 
 $navbar-default-brand-color: $brand-primary;
@@ -17,8 +18,10 @@ $navbar-default-link-hover-bg: lighten($brand-primary, 55%);
 $navbar-default-toggle-border-color: transparent;
 $navbar-default-toggle-hover-bg: transparent;
 
-$headings-font-weight: 600;
-//$headings-font-family: "Museo Slab", serif;
-//$headings-color: #557a89;
+$navbar-default-link-color: darken($brand-primary, 30%);
+
+$headings-font-weight: 700;
+$headings-font-family: 'Magra', sans-serif;
+$headings-color: $brand-dark;
 
 $hero-bg: white;

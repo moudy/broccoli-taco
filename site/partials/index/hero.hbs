@@ -1,19 +1,25 @@
 <div class='hero'>
   <div class='container'>
-    <h2>{{page.tagline}}</h2>
+    <h2 class='tagline'>{{page.tagline}}</h2>
 
     <div class='hero-install'>
-    {{#markdown}}
-      ``` sh
+      {{#markdown}}
+        ``` sh
 npm install -g broccoli-taco
-      ```
-    {{/markdown}}
+        ```
+      {{/markdown}}
+
+      <div class='package-version small'>
+        Version {{site.version}}
+      </div>
     </div>
+
     <ul class='checklist'>
       {{#each page.checklistItems}}
         <li><span class='checkmark'>&#10004;</span> {{{this}}}</li>
       {{/each}}
     </ul>
+
     </div>
   </div>
 </div>
