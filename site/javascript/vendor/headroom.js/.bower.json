@@ -36,6 +36,5 @@
   },
   "_source": "git://github.com/WickyNilliams/headroom.js.git",
   "_target": "~0.6.0",
-  "_originalSource": "headroom.js",
-  "_direct": true
+  "_originalSource": "headroom.js"
 }
