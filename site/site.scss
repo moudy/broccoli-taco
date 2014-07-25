@@ -2,16 +2,17 @@
 @import './css/vendor/bootstrap-custom';
 @import './css/vendor/syntax';
 
-.text-align-center {
-  color: $brand-primary;
+body {
+  padding-top: $navbar-height;
 }
 
 .navbar-brand {
-  background-image: url('/static/broccoli-taco-logo.svg');
+  //background-image: url('/static/broccoli-taco-logo.svg');
   background-size: 60% auto;
   background-position: center center;
   background-repeat: no-repeat;
   text-shadow: 0 1px 4px white;
+  font-weight: 700;
 }
 
 .hero {
@@ -21,18 +22,40 @@
   text-align: center;
   position: relative;
   margin-bottom: 30px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $brand-primary;
+  @include radial-gradient(circle at 50% 50%, #fff, lighten($brand-primary, 50%));
 
-  .checklist {
+  .checklist, pre {
     display: inline-block;
+  }
+
+  pre {
+    margin: 15px 0;
+    background-color: white;
   }
 }
 
 .checklist {
   text-align: left;
+  font-size: 16px;
+  list-style: none;
+  color: lighten($text-color, 15%);
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.checkmark {
+  color: $brand-primary;
+  text-shadow: 0 1px 2px white;
 }
 
 .footer {
   padding: 30px 0;
+}
+
+.nav {
+  a {
+    font-weight: 700;
+  }
 }

@@ -1,19 +1,22 @@
 // Customize bootstrap
-$brand-primary: #7ed321;
+$brand-primary: #00c734;
 $navbar-default-brand-color: $brand-primary;
-$font-family-base: "Proxima Nova", "Helvetica Neue";
-$text-color: #444;
+$font-family-base: Helvetica, arial, freesans, clean, sans-serif;
+$font-size-base: 15px;
+$text-color: #555;
 $body-bg: white;
 
-$navbar-default-brand-color: $text-color;
+$navbar-default-brand-color: $brand-primary;
 $navbar-height: 50px;
 $navbar-default-bg: white;
 $navbar-border-radius: 0;
-$navbar-default-border: $navbar-default-bg;
+$navbar-default-border: $brand-primary;
 $navbar-margin-bottom: 0;
 
-//$headings-font-weight: 400;
-//$headings-font-family: "Museo Slab";
+$navbar-default-link-hover-bg: lighten($brand-primary, 55%);
+
+$headings-font-weight: 600;
+//$headings-font-family: "Museo Slab", serif;
 //$headings-color: #557a89;
 
-$hero-bg: #f5f5f5;
+$hero-bg: white;

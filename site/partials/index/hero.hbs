@@ -1,19 +1,19 @@
 <div class='hero'>
   <div class='container'>
-    <div class='row'>
-      <div class='col-sm-offset-2 col-sm-8'>
-        <h1>
-          Satic Sites Powered by Broccoli
-        </h1>
-        <h4>
-          Perfect for any site that needs to pull in external data at build time.
-        </h4>
-        <ul class='checklist'>
-          <li>Handlebars templates with layouts, partials, &amp; helpers</li>
-          <li>SCSS, Browserify &amp; asset fingerprinting</li>
-          <li>Dynamicaly generated pages based on data</li>
-        </ul>
-      </div>
+    <h2>{{page.tagline}}</h2>
+
+    <div class='hero-install'>
+    {{#markdown}}
+      ``` sh
+npm install -g broccoli-taco
+      ```
+    {{/markdown}}
+    </div>
+    <ul class='checklist'>
+      {{#each page.checklistItems}}
+        <li><span class='checkmark'>&#10004;</span> {{{this}}}</li>
+      {{/each}}
+    </ul>
     </div>
   </div>
 </div>
