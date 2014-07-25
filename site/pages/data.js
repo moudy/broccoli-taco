@@ -2,7 +2,7 @@ module.exports = {
   tagline: 'Static Sites Powered by Broccoli'
 , checklistItems: [
     'Dynamicaly generated pages based on data'
-  , 'Handlebars templates + layouts, partials &amp; helpers'
+  , 'Handlebars templates, layouts, partials, helpers'
   , 'SCSS, Browserify &amp; asset fingerprinting'
   ]
 , summary: {

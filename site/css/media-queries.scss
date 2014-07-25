@@ -1,0 +1,18 @@
+@media (max-width: $screen-sm-min) {
+  .checklist {
+    font-size: 14px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .summary {
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+}
+

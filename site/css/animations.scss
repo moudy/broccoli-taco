@@ -1,0 +1,21 @@
+@include keyframes(animate-btn-active) {
+  0% { @include transform(scale(1)); }
+  100% { @include transform(scale(0.9)); }
+}
+
+@include keyframes(animate-up-out) {
+  0% { @include transform(scaleY(1) translateY(0)); }
+  100% { @include transform(scaleY(0.5) translateY(-100%)); }
+}
+
+@include keyframes(animate-down-in) {
+  0% { @include transform(scaleY(0.5) translateY(-100%)); }
+  60% { @include transform(scaleY(1.1)); }
+  100% { @include transform(scaleY(1) translateY(0)); }
+}
+
+@include keyframes(animate-flash) {
+  0% { color: $headings-color; }
+  10% { color: $brand-primary; }
+  100% { color: $headings-color; }
+}

@@ -12,6 +12,20 @@ body {
   font-weight: 200;
 }
 
+.headroom {
+  @include transform-origin(top left);
+}
+.headroom--pinned {
+  @include animation(animate-down-in 300ms ease-out both);
+}
+.headroom--unpinned {
+  @include animation(animate-up-out 300ms ease-in both);
+}
+
+.page-content {
+  margin-top: 30px;
+}
+
 .text-big {
   font-size: 18px;
 }
@@ -26,6 +40,21 @@ body {
   font-family: $headings-font-family;
 }
 
+.icon-folder {
+  background-image: url('/static/folder-icon.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+h3 .icon-folder {
+  @include transform(translateY(-4px));
+}
+
 .navbar-toggle {
   &:active {
     @include animation(animate-btn-active 300ms cubic-bezier(.17,.67,.23,1.55) forwards);
@@ -38,7 +67,6 @@ body {
   background-color: $hero-bg;
   text-align: center;
   position: relative;
-  margin-bottom: 30px;
   border-bottom: 1px solid $brand-primary;
   @include radial-gradient(circle at 50% 50%, #fff, lighten($brand-primary, 50%));
 
@@ -96,11 +124,28 @@ body {
   }
 }
 
-@include keyframes(animate-btn-active) {
-  0% { @include transform(scale(1)); }
-  100% { @include transform(scale(0.9)); }
-}
-
 .text-centered {
   text-align: center;
 }
+
+.content-nav {
+  position: fixed;
+  top: 70px;
+  padding-top: 20px;
+  li a {
+    color: $gray-light;
+    padding: 5px;
+    &:hover {
+      color: $brand-dark;
+      background-color: transparent;
+    }
+
+  }
+}
+
+.animate-flash {
+  @include animation(animate-flash 1500ms ease-out both);
+}
+
+@import 'css/animations';
+@import 'css/media-queries';

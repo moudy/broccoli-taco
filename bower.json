@@ -1,0 +1,6 @@
+{
+  "name": "broccoli-taco",
+  "dependencies": {
+    "headroom.js": "~0.6.0"
+  }
+}

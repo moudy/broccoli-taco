@@ -1,9 +1,29 @@
 {{#layout}}
 
-  <div class='container'>
-    {{markdown 'getting-started'}}
-    <div class='site-folder-structure'>
-      {{markdown 'documentation/site-folder-structure'}}
+  <div class='container page-content'>
+    <div class='row'>
+
+      <div class='col-sm-9'>
+        {{#each page.sections}}
+          <h3 id='{{id}}'>{{{title}}}</h3>
+          {{#markdown}}{{{body}}}{{/markdown}}
+          <hr />
+        {{/each}}
+      </div>
+
+      <div class='col-sm-3'>
+        <nav class='content-nav'>
+        <ul class='nav'>
+        {{#each page.sections}}
+          <li>
+            {{#link-to 'documentation' anchor=id}}
+              {{navTitle}}
+            {{/link-to}}
+          </li>
+        {{/each}}
+        </ul>
+        </nav>
+      </div>
     </div>
   </div>
 
