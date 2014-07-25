@@ -6,10 +6,10 @@
     <title>Broccoli Site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-    <link href="/site-b30af9eb7e6308297894d81a9c5338eb.css" rel="stylesheet" type="text/css">
+    <link href="/site-449ea785577598c5a4fb0236a20a489f.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <nav class='navbar navbar-default'>
+    <nav class='navbar navbar-default navbar-fixed-top'>
   <div class='container'>
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
@@ -17,19 +17,25 @@
       </a>
     </div>
 
-  <ul class='nav navbar-nav navbar-right'>
-    <li>
-      <a href="/#getting-started">
+    <nav class='collapse navbar-collapse'>
+      <ul class='nav navbar-nav'>
+        <li>
+        <a href="/#getting-started">
         Getting Started
-      </a>
-    </li>
-    <li>
-      <a href="/documentation">Documentation</a>
-    </li>
-    <li>
-      <a href='https://github.com/moudy/broccoli-taco'>Github</a>
-    </li>
-  </ul>
+        </a>
+        </li>
+        <li>
+        <a href="/documentation">Documentation</a>
+        </li>
+      </ul>
+
+      <ul class='nav navbar-nav navbar-right'>
+        <li>
+        <a href='https://github.com/moudy/broccoli-taco'>Github</a>
+        </li>
+      </ul>
+    </nav>
+
 
   </div>
 </nav>
@@ -38,27 +44,27 @@
 
   <div class='hero'>
   <div class='container'>
-    <div class='row'>
-      <div class='col-sm-offset-2 col-sm-8'>
-        <h1>
-          Satic Sites Powered by Broccoli
-        </h1>
-        <h4>
-          Perfect for any site that needs to pull in external data at build time.
-        </h4>
-        <ul class='checklist'>
-          <li>Handlebars templates with layouts, partials, &amp; helpers</li>
-          <li>SCSS, Browserify &amp; asset fingerprinting</li>
-          <li>Dynamicaly generated pages based on data</li>
-        </ul>
-      </div>
+    <h2>Static Sites Powered by Broccoli</h2>
+
+    <div class='hero-install'>
+    <pre><code class="lang-sh">npm install -g broccoli-taco
+</code></pre>
+
+    </div>
+    <ul class='checklist'>
+      
+        <li><span class='checkmark'>&#10004;</span> Dynamicaly generated pages based on data</li>
+      
+        <li><span class='checkmark'>&#10004;</span> Handlebars templates + layouts, partials &amp; helpers</li>
+      
+        <li><span class='checkmark'>&#10004;</span> SCSS, Browserify &amp; asset fingerprinting</li>
+      
+    </ul>
     </div>
   </div>
 </div>
 
   <div class='container'>
-    <div class='row'>
-      <div class='col-sm-offset-2 col-sm-8'>
         <h3 id="getting-started">Getting Started</h3>
 <p>Install the command line utility globally via NPM. This makes <code>broccoli-taco new</code> available everywhere.</p>
 <pre><code class="lang-sh">npm install -g broccoli-taco
@@ -70,6 +76,7 @@ broccoli-taco serve
 </code></pre>
 <p>Your site shoud now be available at <a href="http://localhost:4200/">http://localhost:4200/</a>. You can start adding pages, assets, and data. To build your entire site into a folder you can run <code>broccoli-taco build &lt;folder-name&gt;</code>.</p>
 
+        Check out <a href="/documentation">the documentation</a> for more details.
         <br>
         <h3 id="motivation">Motivation</h3>
 <p>It’s a <a href="https://www.staticgen.com/">crowded market</a> – so why another static site generator?</p>
@@ -81,8 +88,6 @@ broccoli-taco serve
 <p>This file can export an object literal or a function that returns an object. You can also return a Promise that resolves to an object allowing you to fetch remote data when the site is generated.</p>
 <p>If the retunred value of <code>data.js</code> is an array then multiple pages are created for each item in an array.</p>
 
-      </div>
-   </div>
  </div>
 
 
