@@ -3,27 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Broccoli Site</title>
+    <title>Broccoli Taco</title>
+    <link href='http://fonts.googleapis.com/css?family=Magra:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-    <link href="/site-449ea785577598c5a4fb0236a20a489f.css" rel="stylesheet" type="text/css">
+    <link href="/site-00c4e0b54eeb3a7c22383407b66bc216.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <nav class='navbar navbar-default navbar-fixed-top'>
   <div class='container'>
-    <div class="navbar-header">
+    <div class='navbar-header'>
       <a class="navbar-brand" href="/">
         Broccoil Taco
       </a>
+      <button class='navbar-toggle' type='button' data-toggle='collapse' data-target='.taco-navbar-collapse'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
     </div>
 
-    <nav class='collapse navbar-collapse'>
+    <nav class='collapse navbar-collapse taco-navbar-collapse'>
       <ul class='nav navbar-nav'>
-        <li>
-        <a href="/#getting-started">
-        Getting Started
-        </a>
-        </li>
         <li>
         <a href="/documentation">Documentation</a>
         </li>
@@ -44,13 +46,18 @@
 
   <div class='hero'>
   <div class='container'>
-    <h2>Static Sites Powered by Broccoli</h2>
+    <h2 class='tagline'>Static Sites Powered by Broccoli</h2>
 
     <div class='hero-install'>
-    <pre><code class="lang-sh">npm install -g broccoli-taco
+      <pre><code class="lang-sh">npm install -g broccoli-taco
 </code></pre>
 
+
+      <div class='package-version small'>
+        Version 0.0.0
+      </div>
     </div>
+
     <ul class='checklist'>
       
         <li><span class='checkmark'>&#10004;</span> Dynamicaly generated pages based on data</li>
@@ -60,40 +67,63 @@
         <li><span class='checkmark'>&#10004;</span> SCSS, Browserify &amp; asset fingerprinting</li>
       
     </ul>
+
     </div>
   </div>
 </div>
 
   <div class='container'>
-        <h3 id="getting-started">Getting Started</h3>
-<p>Install the command line utility globally via NPM. This makes <code>broccoli-taco new</code> available everywhere.</p>
-<pre><code class="lang-sh">npm install -g broccoli-taco
-</code></pre>
-<p>Then create a new site, install dependencies, and run development server.</p>
-<pre><code class="lang-sh">broccoli-taco new my-site
-<span class="hljs-built_in">cd</span> my-site &amp;&amp; npm install
-broccoli-taco serve
-</code></pre>
-<p>Your site shoud now be available at <a href="http://localhost:4200/">http://localhost:4200/</a>. You can start adding pages, assets, and data. To build your entire site into a folder you can run <code>broccoli-taco build &lt;folder-name&gt;</code>.</p>
+    <div class='row'>
+      <div class='col-md-8 col-md-offset-2'>
+        <div class='text-centered summary'>
+          
+            <h3>Create data-driven static sites.</h3>
+            <p class='text-big'>Broccoli Taco is designed to create data-driven sites with no database. Pages can pull in data (synchronously or asynchronously via promises) at build time. Arrays of data will generate a page for each item allowing you to generate an arbitrary number of pages.</p>
+          
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class='row'>
+      
+      <div class='col-sm-4 point'>
+        <h4>Fast</h4>
+        <p>
+          <p>Thanks to <a href="https://github.com/broccolijs/broccoli">Broccoli</a> re-generating the site is super fast. This makes for a really nice development process, especially when paired with livereload.</p>
 
-        Check out <a href="/documentation">the documentation</a> for more details.
-        <br>
-        <h3 id="motivation">Motivation</h3>
-<p>It’s a <a href="https://www.staticgen.com/">crowded market</a> – so why another static site generator?</p>
-<p><strong>Speed.</strong> Thanks to <a href="https://github.com/broccolijs/broccoli">Broccoli</a> re-generating the site is super fast. This makes for a really nice development process, especially when paired with livereload.</p>
-<p><strong>Simplicity.</strong> Each page is a folder. The only required file in a folder is an <code>index.hbs</code> file.</p>
-<p>The folder can optionally have a <code>page.scss</code> and <code>pages.js</code> file which get included on that page. The folder can also include a <code>data.js</code> file. The value of that file is available in the tmeplate as the <code>{{page}}</code> variable.</p>
-<p>There is also support for top level site-wide assets (<code>site.scss</code>, <code>site.js</code>) and data (<code>{{site}}</code> in the templates).</p>
-<p><strong>Flexibility.</strong> Each folder (which represents a page) can have a <code>data.js</code> (or <code>data.json</code>) file. The value of this file becomes the render context for the corresponding <code>index.hbs</code> file.</p>
-<p>This file can export an object literal or a function that returns an object. You can also return a Promise that resolves to an object allowing you to fetch remote data when the site is generated.</p>
-<p>If the retunred value of <code>data.js</code> is an array then multiple pages are created for each item in an array.</p>
+        </p>
+      </div>
+      
+      <div class='col-sm-4 point'>
+        <h4>Simple</h4>
+        <p>
+          <p>Each page is a folder. The only required file in a folder is an <code>index.hbs</code> file. The folder can also include <code>data.js</code>, <code>page.js</code> and <code>page.css</code> files.</p>
 
- </div>
+        </p>
+      </div>
+      
+      <div class='col-sm-4 point'>
+        <h4>Flexible</h4>
+        <p>
+          <p>Define data for pages as functions, Promises or JSON files. Create helpers and partials to fit your needs. Provide global and page specific assets.</p>
+
+        </p>
+      </div>
+      
+
+    </div>
+    <hr />
+
+    <p class='text-big text-centered'>
+      View the <a href="/documentation">documentation</a> for more details.
+    </p>
+
+  </div>
 
 
     <footer class='footer'>
     </footer>
-    
+    <script src="/site-c37d5bf368249768f01deb066c1db1db.js"></script>
   </body>
 </html>
 
