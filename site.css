@@ -1870,6 +1870,25 @@ body {
   padding-top: 50px;
   font-weight: 200; }
 
+.headroom {
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left; }
+
+.headroom--pinned {
+  -webkit-animation: animate-down-in 300ms ease-out both;
+  -o-animation: animate-down-in 300ms ease-out both;
+  animation: animate-down-in 300ms ease-out both; }
+
+.headroom--unpinned {
+  -webkit-animation: animate-up-out 300ms ease-in both;
+  -o-animation: animate-up-out 300ms ease-in both;
+  animation: animate-up-out 300ms ease-in both; }
+
+.page-content {
+  margin-top: 30px; }
+
 .text-big {
   font-size: 18px; }
 
@@ -1880,6 +1899,23 @@ body {
   text-shadow: 0 1px 4px white;
   font-weight: 700;
   font-family: 'Magra', sans-serif; }
+
+.icon-folder {
+  background-image: url('/static/folder-icon.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle; }
+
+h3 .icon-folder {
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -o-transform: translateY(-4px);
+  transform: translateY(-4px); }
 
 .navbar-toggle:active {
   -webkit-animation: animate-btn-active 300ms cubic-bezier(0.17, 0.67, 0.23, 1.55) forwards;
@@ -1892,7 +1928,6 @@ body {
   background-color: white;
   text-align: center;
   position: relative;
-  margin-bottom: 30px;
   border-bottom: 1px solid #0ca300;
   background-color: #fff;
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, color-stop(0%, #fff), color-stop(100%, #abffa3));
@@ -1937,6 +1972,25 @@ body {
 .nav a {
   font-weight: 700; }
 
+.text-centered {
+  text-align: center; }
+
+.content-nav {
+  position: fixed;
+  top: 70px;
+  padding-top: 20px; }
+  .content-nav li a {
+    color: #777777;
+    padding: 5px; }
+    .content-nav li a:hover {
+      color: #010a00;
+      background-color: transparent; }
+
+.animate-flash {
+  -webkit-animation: animate-flash 1500ms ease-out both;
+  -o-animation: animate-flash 1500ms ease-out both;
+  animation: animate-flash 1500ms ease-out both; }
+
 @-webkit-keyframes animate-btn-active {
   0% {
     -webkit-transform: scale(1); }
@@ -1965,5 +2019,122 @@ body {
   100% {
     transform: scale(0.9); } }
 
-.text-centered {
-  text-align: center; }
+@-webkit-keyframes animate-up-out {
+  0% {
+    -webkit-transform: scaleY(1) translateY(0); }
+
+  100% {
+    -webkit-transform: scaleY(0.5) translateY(-100%); } }
+
+@-moz-keyframes animate-up-out {
+  0% {
+    -moz-transform: scaleY(1) translateY(0); }
+
+  100% {
+    -moz-transform: scaleY(0.5) translateY(-100%); } }
+
+@-o-keyframes animate-up-out {
+  0% {
+    -o-transform: scaleY(1) translateY(0); }
+
+  100% {
+    -o-transform: scaleY(0.5) translateY(-100%); } }
+
+@keyframes animate-up-out {
+  0% {
+    transform: scaleY(1) translateY(0); }
+
+  100% {
+    transform: scaleY(0.5) translateY(-100%); } }
+
+@-webkit-keyframes animate-down-in {
+  0% {
+    -webkit-transform: scaleY(0.5) translateY(-100%); }
+
+  60% {
+    -webkit-transform: scaleY(1.1); }
+
+  100% {
+    -webkit-transform: scaleY(1) translateY(0); } }
+
+@-moz-keyframes animate-down-in {
+  0% {
+    -moz-transform: scaleY(0.5) translateY(-100%); }
+
+  60% {
+    -moz-transform: scaleY(1.1); }
+
+  100% {
+    -moz-transform: scaleY(1) translateY(0); } }
+
+@-o-keyframes animate-down-in {
+  0% {
+    -o-transform: scaleY(0.5) translateY(-100%); }
+
+  60% {
+    -o-transform: scaleY(1.1); }
+
+  100% {
+    -o-transform: scaleY(1) translateY(0); } }
+
+@keyframes animate-down-in {
+  0% {
+    transform: scaleY(0.5) translateY(-100%); }
+
+  60% {
+    transform: scaleY(1.1); }
+
+  100% {
+    transform: scaleY(1) translateY(0); } }
+
+@-webkit-keyframes animate-flash {
+  0% {
+    color: #010a00; }
+
+  10% {
+    color: #0ca300; }
+
+  100% {
+    color: #010a00; } }
+
+@-moz-keyframes animate-flash {
+  0% {
+    color: #010a00; }
+
+  10% {
+    color: #0ca300; }
+
+  100% {
+    color: #010a00; } }
+
+@-o-keyframes animate-flash {
+  0% {
+    color: #010a00; }
+
+  10% {
+    color: #0ca300; }
+
+  100% {
+    color: #010a00; } }
+
+@keyframes animate-flash {
+  0% {
+    color: #010a00; }
+
+  10% {
+    color: #0ca300; }
+
+  100% {
+    color: #010a00; } }
+
+@media (max-width: 768px) {
+  .checklist {
+    font-size: 14px;
+    margin-left: -10px;
+    margin-right: -10px; }
+  .summary {
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px; }
+    .summary h3 {
+      font-size: 20px; } }

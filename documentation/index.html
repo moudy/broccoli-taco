@@ -7,10 +7,10 @@
     <link href='http://fonts.googleapis.com/css?family=Magra:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-    <link href="/site-00c4e0b54eeb3a7c22383407b66bc216.css" rel="stylesheet" type="text/css">
+    <link href="/site-c3e650b0b484309da9db63274fd6c8d2.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <nav class='navbar navbar-default navbar-fixed-top'>
+    <header class='header navbar navbar-default navbar-fixed-top'>
   <div class='container'>
     <div class='navbar-header'>
       <a class="navbar-brand" href="/">
@@ -40,13 +40,17 @@
 
 
   </div>
-</nav>
+</header>
 
     
 
-  <div class='container'>
-    <h3 id="getting-started">Getting Started</h3>
-<p>Install the command line utility globally via NPM. This makes <code>broccoli-taco new</code> available everywhere.</p>
+  <div class='container page-content'>
+    <div class='row'>
+
+      <div class='col-sm-9'>
+        
+          <h3 id='getting-started'>Getting Started</h3>
+          <p>Install the command line utility globally via NPM. This makes <code>broccoli-taco new</code> available everywhere.</p>
 <pre><code class="lang-sh">npm install -g broccoli-taco
 </code></pre>
 <p>Then create a new site, install dependencies, and run development server.</p>
@@ -56,48 +60,88 @@ broccoli-taco serve
 </code></pre>
 <p>Your site shoud now be available at <a href="http://localhost:4200/">http://localhost:4200/</a>. You can start adding pages, assets, and data. To build your entire site into a folder you can run <code>broccoli-taco build &lt;folder-name&gt;</code>.</p>
 
-    <div class='site-folder-structure'>
-      <h4 id="folder-structure">Folder Structure</h4>
-<ul>
-<li><strong>site/helpers/</strong><br>Handlebars helpers. Each helper should have it’s own file that exports a function. The filename is the name of the helper.</li>
-<li><strong>site/layouts/</strong><br>Layouts used by the <code>layout</code> helper. The file should conatin a <code>{{{yield}}}</code>. This is where the page content will be rendered.</li>
-<li><strong>site/pages/</strong><br>The pages of the site. See the next section for details.</li>
-<li><strong>site/partials/</strong><br>Handlebars partials made avaible in the view (i.e. <code>{{&gt;header}}</code>).</li>
-<li><strong>site/data.js/</strong><br>Data made availble to all templates as the site object (i.e. <code>{{site.name}}</code>). See the data sesction for more deatils.</li>
-<li><strong>site/site.scss/</strong><br>CSS file included on every page.</li>
-<li><strong>site/site.js/</strong><br>Javascript file included on every page.</li>
-</ul>
-<p>Each folder within <code>site/pages/</code> represents a page. A folder must contain an <code>index.hbs</code> file. It can optioanlly contain a <code>page.scss</code>, <code>page.js</code>, and <code>data.js</code> file. Folders can conatain other folders of pages. <code>site/pages</code> is the first page folder making it the index page (i.e. <a href="http://broccoli-taco.com/">http://broccoli-taco.com/</a>). To add a page (i.e. <a href="http://broccoli-taco.com/documentation/">http://broccoli-taco.com/documentation/</a>) you would create <code>site/pages/documentation/index.hbs</code>.</p>
-<ul>
-<li><p><strong>site/pages/documentation/index.hbs</strong><br>The Handlebars template for the page. Here you can render partials, use helpers and access the global <code>{{site}}</code> object and the page specific <code>{{page}}</code> object. This is the only required file for a page folder.</p>
-</li>
-<li><p><strong>site/pages/documentation/page.scss</strong><br>A SCSS file that gets compiled to CSS and included on the page. Useful if you have CSS only relevant to that specific page.</p>
-</li>
-<li><p><strong>site/pages/documentation/page.js</strong><br>A JavScript file that gets Browserified. Useful if you have JavaScript only relevant to that specific page.</p>
-</li>
-<li><p><strong>site/pages/documentation/data.(js|json)</strong><br>The data provided by this file is exposed to the Handlebars template as the <code>{{page}}</code> object. It can be a JSON object, object literal, or a function returning a value or Promise. If an array is returned, a page for each item in the array is generated allowing you to use the same <code>index.hbs</code> template with a set of data (like a list of blog posts).</p>
-</li>
-</ul>
-<h4 id="helpers">Helpers</h4>
-<p>There are 4 built in helpers. You can add your own by creating a file in <code>site/helpers</code>.</p>
+          <hr />
+        
+          <h3 id='site-folder'><span class="icon-folder"></span> Site Folder</h3>
+          <p><code>site/helpers/</code><br>Handlebars helpers. Each helper should have it’s own file that exports a function. The filename is the name of the helper.</p>
+<p><code>site/layouts/</code><br>Layouts used by the <code>layout</code> helper. The file should conatin a <code>{{{yield}}}</code>. This is where the page content will be rendered.</p>
+<p><code>site/pages/</code><br>The pages of the site. See the next section for details.</p>
+<p><code>site/partials/</code><br>Handlebars partials made avaible in the view (i.e. <code>{{&gt;header}}</code>).</p>
+<p><code>site/data.js/</code><br>Data made availble to all templates as the site object (i.e. <code>{{site.name}}</code>). See the data sesction for more deatils.</p>
+<p><code>site/site.scss/</code><br>CSS file included on every page.</p>
+<p><code>site/site.js/</code><br>Javascript file included on every page.</p>
+
+          <hr />
+        
+          <h3 id='page-folder'><span class="icon-folder"></span> Page Folder</h3>
+          <p>Each folder within <code>site/pages/</code> represents a page. Folders can conatain other folders of pages. <code>site/pages</code> is the first page folder making it the index page (i.e. <a href="http://broccoli-taco.com/">http://broccoli-taco.com/</a>). To add a page (i.e. <a href="http://broccoli-taco.com/documentation/">http://broccoli-taco.com/documentation/</a>) you would create <code>site/pages/documentation/index.hbs</code>.</p>
+<p><code>site/pages/documentation/index.hbs</code><br>The Handlebars template for the page. Here you can render partials, use helpers and access the global <code>{{site}}</code> object and the page specific <code>{{page}}</code> object. This is the only required file for a page folder.</p>
+<p><code>site/pages/documentation/page.scss</code><br>A SCSS file that gets compiled to CSS and included on the page. Useful if you have CSS only relevant to that specific page.</p>
+<p><code>site/pages/documentation/page.js</code><br>  A JavaScript file that gets Browserified. Useful if you have JavaScript only relevant to that specific page.</p>
+<p><code>site/pages/documentation/data.(js|json)</code><br>The data provided by this file is exposed to the Handlebars template as the <code>{{page}}</code> object. It can be a JSON object, object literal, or a function returning a value or Promise. If an array is returned, a page for each item in the array is generated allowing you to use the same <code>index.hbs</code> template with a set of data (like a list of blog posts).</p>
+
+          <hr />
+        
+          <h3 id='helpers'>Helpers</h3>
+          <p>There are 4 built in helpers. You can add your own by creating a file in <code>site/helpers</code>.</p>
 <p><code>{{css-tags [args]}}</code><br>This adds fingerprinted site.css and page.css (when available) files to the page. If you only want to include a specific one you can pass in an argument. For example <code>{{css-tags &#39;page&#39;}}</code> would not include the global <code>site.css</code> file.</p>
 <p><code>{{javascript-tags [args]}}</code><br>Same as the above <code>css-tags</code> helper but for the corresponing JavaScript files.</p>
 <p><code>{{#layout [name]}}{{/layout}}</code><br>A block helper to wrap content in other markup. The layout file should include <code>{{{yield}}}</code> somewhere. If no argument is provided <code>site/layouts/defauls.hbs</code> is used. Layouts can be nested inside each other.</p>
 <p><code>{{#link-to &#39;page&#39; [attributes]}}Home{{/link-to}}</code><br>Create a link to a page. This is useful because it makes sure you don’t have any broken links.</p>
-<h4 id="partials">Partials</h4>
-<p>Partials are located in ‘site/partials/‘ and behave like regular Handlebars partials.</p>
-<h4 id="development-server">Development Server</h4>
-<p>The development server can be run by running <code>broccoli-taco server</code>. It takes the same arguments as the <a href="https://github.com/broccolijs/broccoli-cli">Broccoli CLI</a></p>
-<h4 id="building-the-site">Building The Site</h4>
-<p>To build your entire site into a folder you can run <code>broccoli-taco build &lt;folder-name&gt;</code>.</p>
 
+          <hr />
+        
+          <h3 id='partials'>Partials</h3>
+          <p>Partials are located in ‘site/partials/‘ and behave like regular Handlebars partials.</p>
+
+          <hr />
+        
+      </div>
+
+      <div class='col-sm-3'>
+        <nav class='content-nav'>
+        <ul class='nav'>
+        
+          <li>
+            <a href="/documentation#getting-started">
+              Getting Started
+            </a>
+          </li>
+        
+          <li>
+            <a href="/documentation#site-folder">
+              Site Folder
+            </a>
+          </li>
+        
+          <li>
+            <a href="/documentation#page-folder">
+              Page Folder
+            </a>
+          </li>
+        
+          <li>
+            <a href="/documentation#helpers">
+              Helper
+            </a>
+          </li>
+        
+          <li>
+            <a href="/documentation#partials">
+              Partials
+            </a>
+          </li>
+        
+        </ul>
+        </nav>
+      </div>
     </div>
   </div>
 
 
     <footer class='footer'>
     </footer>
-    <script src="/site-c37d5bf368249768f01deb066c1db1db.js"></script>
+    <script src="/site-75e2dce2886d95787932366b8945693d.js"></script>
   </body>
 </html>
 
