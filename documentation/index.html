@@ -7,7 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Magra:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-    <link href="/site-90110c69f741028ab3aa4e71935a5454.css" rel="stylesheet" type="text/css">
+    <link href="/site-7819391ee5b9ae8ee6f805ad8648e072.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <header class='header navbar navbar-default navbar-fixed-top'>
@@ -125,6 +125,10 @@ broccoli-taco serve
 </li>
 </ul>
 </li>
+<li><p><span class="icon-file"></span> <strong>Brocfile.js</strong><br>For configuing some build options.</p>
+</li>
+<li><p><span class="icon-file"></span> <strong>package.json</strong><br>Declare you dependecies here like any other Node project.</p>
+</li>
 </ul>
 
           </section>
@@ -134,7 +138,7 @@ broccoli-taco serve
             <h3 id='page-folder'>Page Folder</h3>
             <p>Each folder within <code>site/pages/</code> represents a page. Folders can conatain other folders of pages.</p>
 <ul>
-<li><p><span class="icon-folder"></span> <strong>site/pages/</strong><br>The first page folder is ‘pages`, making it the index page (i.e. <a href="http://broccoli-taco.com/">broccoli-taco.com</a>).</p>
+<li><p><span class="icon-folder"></span> <strong>pages/</strong><br>The first page folder is ‘pages`, making it the index page (i.e. <a href="http://broccoli-taco.com/">broccoli-taco.com</a>).</p>
 <ul>
 <li><p><span class="icon-file"></span> <strong>index.hbs</strong><br>The Handlebars template for the page. Here you can render partials, use helpers and access the global <code>{{site}}</code> object and the page specific <code>{{page}}</code> object. This is the only required file for a page folder.</p>
 </li>
@@ -215,7 +219,7 @@ broccoli-taco serve
         
           <section class='section-documentation section-partials'>
             <h3 id='partials'>Partials</h3>
-            <p>Partials should in <code>site/partials/</code> and behave like regular Handlebars partials.</p>
+            <p>Partials should go in <code>site/partials/</code>. They work like regular Handlebars partials.</p>
 <pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- renders 'site/partials/footer.hbs' --&gt;</span>
 </span><span class="hljs-expression">{{&gt;<span class="hljs-variable">footer</span>}}</span><span class="xml"></span>
 </code></pre>

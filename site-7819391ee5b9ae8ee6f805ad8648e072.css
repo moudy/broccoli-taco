@@ -2000,7 +2000,8 @@ p code {
 
 .section-site-folder > ul, .section-page-folder > ul {
   position: relative;
-  left: -20px; }
+  left: -20px;
+  overflow: hidden; }
 .section-site-folder ul, .section-page-folder ul {
   padding-left: 20px;
   list-style: none; }
