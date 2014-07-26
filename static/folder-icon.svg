@@ -10,7 +10,7 @@
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <rect id="Rectangle-1" stroke="#135C8F" stroke-width="2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="31" y="0" width="121" height="96" rx="31"></rect>
+        <rect id="Rectangle-1" stroke="#135C8F" stroke-width="2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="31" y="-7" width="142" height="96" rx="31"></rect>
         <rect id="Rectangle-2" stroke="#135C8F" stroke-width="2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="0" y="18" width="365" height="232" rx="31"></rect>
     </g>
 </svg>
