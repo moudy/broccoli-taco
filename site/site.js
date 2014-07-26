@@ -21,12 +21,10 @@ function start () {
     if (!anchor) return;
 
     var $target = $('#'+anchor);
-    $target.removeClass('animate-flash');
     $('html, body').stop(true, true).animate({
       scrollTop: $target.offset().top - 70
     }, 300, 'swing', function () {
       window.location.hash = anchor;
-      setTimeout(function () { $target.addClass('animate-flash'); }, 10);
     });
   });
 

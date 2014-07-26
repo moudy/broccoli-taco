@@ -40,7 +40,7 @@ body {
   font-family: $headings-font-family;
 }
 
-.icon-folder {
+.icon-folder, .icon-file {
   background-image: url('/static/folder-icon.svg');
   background-size: contain;
   background-position: center center;
@@ -49,17 +49,12 @@ body {
   width: 20px;
   height: 20px;
   vertical-align: middle;
+  @include transform(translateY(-2px));
 }
 
 .icon-file {
   background-image: url('/static/file-icon.svg');
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
+  height: 15px;
 }
 
 .navbar-toggle {

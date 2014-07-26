@@ -10,6 +10,6 @@
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <rect id="Rectangle-1" stroke="#C4C4C4" stroke-width="2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="0" y="0" width="220" height="278"></rect>
+        <rect id="Rectangle-1" stroke="#DBDBDB" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="0" y="0" width="220" height="278"></rect>
     </g>
 </svg>

@@ -11,6 +11,9 @@
   - <span class="icon-folder"></span> **partials/**  
     Handlebars partials made avaible in the view (i.e. `{{>header}}`).
 
+  - <span class="icon-folder"></span> **static/**  
+    This folder is copied over as is.
+
   - <span class="icon-file"></span> **data.js**  
     Data made availble to all templates as the site object (i.e. `{{site.name}}`). See the data sesction for more deatils.
 
