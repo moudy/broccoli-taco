@@ -1,8 +1,8 @@
 /* globals window: false */
 
-var $ = window.jQuery = require('jquery');
-require('./javascript/vendor/headroom.js/dist/headroom.js');
-require('./javascript/vendor/headroom.js/dist/jQuery.headroom.js');
+var $ = window.jQuery = require('../bower_components/jquery/dist/jquery.js');
+require('../bower_components/headroom.js/dist/headroom.js');
+require('../bower_components/headroom.js/dist/jQuery.headroom.js');
 
 function start () {
   $('body').on('click', '[data-toggle]', function (e) {
@@ -11,7 +11,7 @@ function start () {
     $(data.target).toggleClass(data.toggle);
   });
 
-  $('.header').headroom();
+  if ('/' !== window.location.pathname) $('.header').headroom();
 
   $('body').on('click', '.content-nav a', function (e) {
     e.preventDefault();
