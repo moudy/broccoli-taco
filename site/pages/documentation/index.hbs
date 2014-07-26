@@ -3,14 +3,6 @@
   <div class='container page-content'>
     <div class='row'>
 
-      <div class='col-sm-9'>
-        {{#each page.sections}}
-          <h3 id='{{id}}'>{{title}}</h3>
-          {{#markdown}}{{{body}}}{{/markdown}}
-          <hr />
-        {{/each}}
-      </div>
-
       <div class='col-sm-3 hidden-xs'>
         <nav class='content-nav'>
         <ul class='nav'>
@@ -24,6 +16,17 @@
         </ul>
         </nav>
       </div>
+
+      <div class='col-sm-9'>
+        {{#each page.sections}}
+          <section class='section-{{id}}'>
+            <h3 id='{{id}}'>{{title}}</h3>
+            {{#markdown}}{{{body}}}{{/markdown}}
+          </section>
+          <hr />
+        {{/each}}
+      </div>
+
     </div>
   </div>
 

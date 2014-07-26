@@ -154,5 +154,23 @@ body {
   @include animation(animate-flash 1500ms ease-out both);
 }
 
+p code {
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.section-site-folder, .section-page-folder {
+  $list-padding: 20px;
+  > ul {
+    position: relative;
+    left: -$list-padding;
+  }
+  ul {
+    padding-left: $list-padding;
+    list-style: none;
+  }
+}
+
 @import 'css/animations';
 @import 'css/media-queries';
