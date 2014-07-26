@@ -1,6 +1,6 @@
 {
   "name": "broccoli-taco",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Broccoli based static site generator",
   "repository": "https://github.com/moudy/broccoli-taco",
   "main": "index.js",
