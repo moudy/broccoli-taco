@@ -1,26 +1,30 @@
 var fs = require('fs');
 var path = require('path');
+var walkSync = require('walk-sync');
 
-function toString (id) {
-  var filepath = path.join(__dirname, 'sections', id+'.md');
+var sectionsPath = path.join(__dirname, 'sections');
+
+function toString (filepath) {
   return fs.readFileSync(filepath).toString();
+}
+
+function toId (title) {
+  return title.toLowerCase().replace(/\s/g, '-');
 }
 
 module.exports = function () {
   var page = {};
 
-  var sections = [
-    { id: 'getting-started', title: 'Getting Started', navTitle: 'Getting Started' }
-  , { id: 'site-folder', title: '<span class="icon-folder"></span> Site Folder', navTitle: 'Site Folder' }
-
-  , { id: 'page-folder', title: '<span class="icon-folder"></span> Page Folder', navTitle: 'Page Folder' }
-  , { id: 'helpers', title: 'Helpers', navTitle: 'Helper' }
-  , { id: 'partials', title: 'Partials', navTitle: 'Partials' }
-  ];
+  var sections = walkSync(sectionsPath);
 
   page.sections = sections.map(function (section) {
-    section.body = toString(section.id);
-    return section;
+    var title = section.replace(/\.md$/g, '').replace(/^[A-Z]\. /, '');
+    var filepath = path.join(sectionsPath, section);
+    return {
+      id: toId(title)
+    , title: title
+    , body: toString(filepath)
+    };
   });
 
   return page;

@@ -46,13 +46,20 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
 }
 
-h3 .icon-folder {
-  @include transform(translateY(-4px));
+.icon-file {
+  background-image: url('/static/file-icon.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
 }
 
 .navbar-toggle {

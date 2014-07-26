@@ -5,7 +5,7 @@
 
       <div class='col-sm-9'>
         {{#each page.sections}}
-          <h3 id='{{id}}'>{{{title}}}</h3>
+          <h3 id='{{id}}'>{{title}}</h3>
           {{#markdown}}{{{body}}}{{/markdown}}
           <hr />
         {{/each}}
@@ -17,7 +17,7 @@
         {{#each page.sections}}
           <li>
             {{#link-to 'documentation' anchor=id}}
-              {{navTitle}}
+              {{title}}
             {{/link-to}}
           </li>
         {{/each}}
