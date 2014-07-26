@@ -17,6 +17,8 @@ module.exports = function () {
 
   var sections = walkSync(sectionsPath);
 
+  page.tagline = 'How to make broccoli tacos.'
+
   page.sections = sections.map(function (section) {
     var title = section.replace(/\.md$/g, '').replace(/^[A-Z]\. /, '');
     var filepath = path.join(sectionsPath, section);

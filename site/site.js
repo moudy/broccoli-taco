@@ -11,7 +11,7 @@ function start () {
     $(data.target).toggleClass(data.toggle);
   });
 
-  if ('/' !== window.location.pathname) $('.header').headroom();
+  $('.header').headroom();
 
   $('body').on('click', '.content-nav a', function (e) {
     e.preventDefault();

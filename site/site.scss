@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  padding-top: $navbar-height;
+  //padding-top: $navbar-height;
   font-weight: 200;
 }
 
@@ -64,7 +64,7 @@ body {
 }
 
 .hero {
-  padding-top: 50px;
+  padding-top: 50px + $navbar-height;
   padding-bottom: 60px;
   background-color: $hero-bg;
   text-align: center;
@@ -132,7 +132,8 @@ body {
 
 .content-nav {
   position: fixed;
-  top: 70px;
+  top: 290px;
+  text-align: right;
   padding-top: 20px;
   li a {
     color: $gray-light;
@@ -143,10 +144,6 @@ body {
     }
 
   }
-}
-
-.animate-flash {
-  @include animation(animate-flash 1500ms ease-out both);
 }
 
 p code {

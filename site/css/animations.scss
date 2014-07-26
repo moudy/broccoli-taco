@@ -14,8 +14,3 @@
   100% { @include transform(scaleY(1) translateY(0)); }
 }
 
-@include keyframes(animate-flash) {
-  0% { color: $headings-color; }
-  10% { color: $brand-primary; }
-  100% { color: $headings-color; }
-}
