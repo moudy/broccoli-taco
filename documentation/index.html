@@ -7,7 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Magra:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-    <link href="/site-c88900df44ea050b5f60d8253ea9862d.css" rel="stylesheet" type="text/css">
+    <link href="/site-90110c69f741028ab3aa4e71935a5454.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <header class='header navbar navbar-default navbar-fixed-top'>
@@ -115,6 +115,8 @@ broccoli-taco serve
 </li>
 <li><p><span class="icon-folder"></span> <strong>partials/</strong><br>Handlebars partials made avaible in the view (i.e. <code>{{&gt;header}}</code>).</p>
 </li>
+<li><p><span class="icon-folder"></span> <strong>static/</strong><br>This folder is copied over as is.</p>
+</li>
 <li><p><span class="icon-file"></span> <strong>data.js</strong><br>Data made availble to all templates as the site object (i.e. <code>{{site.name}}</code>). See the data sesction for more deatils.</p>
 </li>
 <li><p><span class="icon-file"></span> <strong>site.scss</strong><br>CSS file included on every page.</p>
@@ -154,17 +156,69 @@ broccoli-taco serve
           <section class='section-documentation section-helpers'>
             <h3 id='helpers'>Helpers</h3>
             <p>There are 4 built in helpers. You can add your own by creating a file in <code>site/helpers</code>.</p>
-<p><code>{{css-tags [args]}}</code><br>This adds fingerprinted site.css and page.css (when available) files to the page. If you only want to include a specific one you can pass in an argument. For example <code>{{css-tags &#39;page&#39;}}</code> would not include the global <code>site.css</code> file.</p>
-<p><code>{{javascript-tags [args]}}</code><br>Same as the above <code>css-tags</code> helper but for the corresponing JavaScript files.</p>
-<p><code>{{#layout [name]}}{{/layout}}</code><br>A block helper to wrap content in other markup. The layout file should include <code>{{{yield}}}</code> somewhere. If no argument is provided <code>site/layouts/defauls.hbs</code> is used. Layouts can be nested inside each other.</p>
-<p><code>{{#link-to &#39;page&#39; [attributes]}}Home{{/link-to}}</code><br>Create a link to a page. This is useful because it makes sure you don’t have any broken links.</p>
+<hr>
+
+<p><strong>css-tags</strong> (args…)<br>Adds fingerprinted site.css and page.css (when available) files to the page.</p>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- global 'site.css' and current page's 'page.css' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span>}}</span><span class="xml">
+
+<span class="hljs-comment">&lt;!-- only that page's 'page.css' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span> '<span class="hljs-variable">page</span>'}}</span><span class="xml">
+
+<span class="hljs-comment">&lt;!-- only the global 'site.css' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span> '<span class="hljs-variable">site</span>'}}</span><span class="xml"></span>
+</code></pre>
+<hr>
+
+<p><strong>javascript-tags</strong> (args…)<br>Adds fingerprinted site.js and page.js (when available) files to the page.</p>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- global 'site.js' and current page's 'page.js' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span>}}</span><span class="xml">
+
+<span class="hljs-comment">&lt;!-- only that page's 'page.js' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span> '<span class="hljs-variable">page</span>'}}</span><span class="xml">
+
+<span class="hljs-comment">&lt;!-- only the global 'site.js' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span> '<span class="hljs-variable">site</span>'}}</span><span class="xml"></span>
+</code></pre>
+<hr>
+
+<p><strong>layout</strong> ( [name] )<br>A block helper to wrap content in other markup. The layout file should include <code>{{{yield}}}</code> somewhere. Layouts can be nested inside each other.</p>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- defaults to 'site/layouts/default.hbs' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-begin-block">#layout</span>}}</span><span class="xml">
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- uses 'site/layouts/aricle.hbs' --&gt;</span>
+  </span><span class="hljs-expression">{{<span class="hljs-begin-block">#layout </span>'<span class="hljs-variable">article</span>'}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>World<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  </span><span class="hljs-expression">{{<span class="hljs-end-block">/layout</span>}}</span><span class="xml">
+
+</span><span class="hljs-expression">{{<span class="hljs-end-block">/layout</span>}}</span><span class="xml"></span>
+</code></pre>
+<hr>
+
+<p><strong>link-to</strong> (page [, model] [, attributes] )<br>Link to a page. The helper makes sure you don’t have any broken links.</p>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- link to /documentation --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-begin-block">#link-to </span>'<span class="hljs-variable">documentation</span>' <span class="hljs-variable">class</span>='<span class="hljs-variable">foo</span>' <span class="hljs-variable">target</span>='_<span class="hljs-variable">blank</span>'}}</span><span class="xml">
+  Documentation
+{/link-to}}
+
+<span class="hljs-comment">&lt;!-- link to /posts/:id --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> page.posts</span>}}</span><span class="xml">J
+  </span><span class="hljs-expression">{{<span class="hljs-begin-block">#link-to </span>'<span class="hljs-variable">post</span>' <span class="hljs-variable">this</span> <span class="hljs-variable">class</span>='<span class="hljs-variable">post</span>'}}</span><span class="xml">
+    </span><span class="hljs-expression">{{<span class="hljs-variable">title</span>}}</span><span class="xml">
+  {/link-to}}
+</span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml"></span>
+</code></pre>
 
           </section>
           <hr />
         
           <section class='section-documentation section-partials'>
             <h3 id='partials'>Partials</h3>
-            <p>Partials are located in ‘site/partials/‘ and behave like regular Handlebars partials.</p>
+            <p>Partials should in <code>site/partials/</code> and behave like regular Handlebars partials.</p>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- renders 'site/partials/footer.hbs' --&gt;</span>
+</span><span class="hljs-expression">{{&gt;<span class="hljs-variable">footer</span>}}</span><span class="xml"></span>
+</code></pre>
 
           </section>
           <hr />
@@ -177,7 +231,7 @@ broccoli-taco serve
 
     <footer class='footer'>
     </footer>
-    <script src="/site-7cef5af1bea8886179fe4fa40c482a23.js"></script>
+    <script src="/site-f7d71bd9b8aaa530b31ecc39cb07e897.js"></script>
   </body>
 </html>
 
