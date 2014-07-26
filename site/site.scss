@@ -160,6 +160,7 @@ p code {
   > ul {
     position: relative;
     left: -$list-padding;
+    overflow: hidden;
   }
   ul {
     padding-left: $list-padding;

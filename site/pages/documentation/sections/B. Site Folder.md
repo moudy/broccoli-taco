@@ -23,4 +23,9 @@
   - <span class="icon-file"></span> **site.js**  
     Javascript file included on every page.
 
+- <span class="icon-file"></span> **Brocfile.js**  
+  For configuing some build options.
+
+- <span class="icon-file"></span> **package.json**  
+  Declare you dependecies here like any other Node project.
 

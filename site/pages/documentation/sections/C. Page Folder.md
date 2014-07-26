@@ -1,6 +1,6 @@
 Each folder within `site/pages/` represents a page. Folders can conatain other folders of pages.
 
-- <span class="icon-folder"></span> **site/pages/**  
+- <span class="icon-folder"></span> **pages/**  
   The first page folder is 'pages`, making it the index page (i.e. [broccoli-taco.com](http://broccoli-taco.com/)).
   - <span class="icon-file"></span> **index.hbs**  
     The Handlebars template for the page. Here you can render partials, use helpers and access the global `{{site}}` object and the page specific `{{page}}` object. This is the only required file for a page folder.
