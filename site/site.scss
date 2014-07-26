@@ -172,5 +172,13 @@ p code {
   }
 }
 
+.section-documentation {
+  &:first-of-type {
+    margin-top: 0;
+  }
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
 @import 'css/animations';
 @import 'css/media-queries';
