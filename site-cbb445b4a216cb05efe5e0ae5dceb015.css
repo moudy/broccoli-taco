@@ -1867,7 +1867,6 @@ html {
   -webkit-font-smoothing: antialiased !important; }
 
 body {
-  padding-top: 50px;
   font-weight: 200; }
 
 .headroom {
@@ -1925,7 +1924,7 @@ body {
   animation: animate-btn-active 300ms cubic-bezier(0.17, 0.67, 0.23, 1.55) forwards; }
 
 .hero {
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 60px;
   background-color: white;
   text-align: center;
@@ -1979,7 +1978,8 @@ body {
 
 .content-nav {
   position: fixed;
-  top: 70px;
+  top: 290px;
+  text-align: right;
   padding-top: 20px; }
   .content-nav li a {
     color: #777777;
@@ -1987,11 +1987,6 @@ body {
     .content-nav li a:hover {
       color: #010a00;
       background-color: transparent; }
-
-.animate-flash {
-  -webkit-animation: animate-flash 1500ms ease-out both;
-  -o-animation: animate-flash 1500ms ease-out both;
-  animation: animate-flash 1500ms ease-out both; }
 
 p code {
   border: 1px solid #ddd;
@@ -2108,46 +2103,6 @@ p code {
 
   100% {
     transform: scaleY(1) translateY(0); } }
-
-@-webkit-keyframes animate-flash {
-  0% {
-    color: #010a00; }
-
-  10% {
-    color: #0ca300; }
-
-  100% {
-    color: #010a00; } }
-
-@-moz-keyframes animate-flash {
-  0% {
-    color: #010a00; }
-
-  10% {
-    color: #0ca300; }
-
-  100% {
-    color: #010a00; } }
-
-@-o-keyframes animate-flash {
-  0% {
-    color: #010a00; }
-
-  10% {
-    color: #0ca300; }
-
-  100% {
-    color: #010a00; } }
-
-@keyframes animate-flash {
-  0% {
-    color: #010a00; }
-
-  10% {
-    color: #0ca300; }
-
-  100% {
-    color: #010a00; } }
 
 @media (max-width: 768px) {
   .checklist {
