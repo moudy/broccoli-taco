@@ -1996,7 +1996,8 @@ body {
 p code {
   border: 1px solid #ddd;
   background-color: #f8f8f8;
-  color: #333; }
+  color: #333;
+  font-size: 80%; }
 
 .section-site-folder > ul, .section-page-folder > ul {
   position: relative;
