@@ -102,4 +102,11 @@ describe('broccoli-taco build <destination>', function () {
     it('compiles about/page.js', test.contain('aboutPageJS', 'ABOUT_PAGE_JS'));
   });
 
+  context('Static', function () {
+    it('moves static files', function () {
+      var files = walkSync(testAppPathDestPath);
+      expect(files).to.include.members(['static/', 'static/foo.txt']);
+    });
+  });
+
 });
