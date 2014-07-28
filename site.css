@@ -2085,17 +2085,25 @@ body {
 
 .content-nav {
   margin-top: 20px;
-  border: 1px solid #ddd; }
+  border: 1px solid #eeeeee;
+  border-top: 0 none; }
   .content-nav.affix {
     top: 0; }
   .content-nav .list-group {
     margin-bottom: 0; }
   .content-nav > li > a {
-    background-color: #eeeeee;
+    border-top: 1px solid #eeeeee;
+    background-color: white;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+    background-image: -webkit-linear-gradient(#ffffff, #eeeeee);
+    background-image: linear-gradient(#ffffff, #eeeeee);
     color: #010a00; }
   .content-nav > li.active > a {
     color: white;
-    background-color: #0ca300; }
+    background-color: #7cff70;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7cff70), color-stop(100%, #0ea300));
+    background-image: -webkit-linear-gradient(#7cff70, #0ea300);
+    background-image: linear-gradient(#7cff70, #0ea300); }
     .content-nav > li.active > a:hover {
       background-color: #0ca300; }
   .content-nav > li li {
