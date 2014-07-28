@@ -7,10 +7,10 @@
     <link href='http://fonts.googleapis.com/css?family=Magra:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-    <link href="/site-cbb445b4a216cb05efe5e0ae5dceb015.css" rel="stylesheet" type="text/css">
+    <link href="/site-163ab1620a004f4cb33ec11db7ee5e63.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <header class='header navbar navbar-default navbar-fixed-top'>
+    <header class='header navbar navbar-default'>
   <div class='container'>
     <div class='navbar-header'>
       <a class="navbar-brand" href="/">
@@ -46,73 +46,165 @@
 
 <div class='hero'>
   <div class='container'>
-    <h2 class='tagline'>How to make broccoli tacos.</h2>
-    <p class='text-big'>An overview of files and folders.</p>
+    <h2 class='tagline'>Documentation</h2>
+    <p class='text-big'>An overview of files, folders, helpers and partials.</p>
+    <p>Natuarlly this site is made using Broccoli Taco. It’s hosted on Github Pages The source can be viewed <a href="https://github.com/moudy/broccoli-taco/tree/gh-pages-dev/site">here</a>.</p>
+
+
+
   </div>
 </div>
 
   <div class='container page-content'>
     <div class='row'>
 
-      <div class='col-sm-2 hidden-xs'>
-        <nav class='content-nav'>
-        <ul class='nav'>
+
+      <div class='col-lg-2 nav-sidebar'>
+        <ul class='content-nav nav hidden-md hidden-sm hidden-xs'>
         
-          <li>
-            <a href="/documentation#getting-started">
+          <li class=''>
+            <a href='#getting-started'>
               Getting Started
             </a>
+            <div class='nav-sidebar'>
+            <ul class='nav'>
+              
+                <li class=''>
+                  <a href='#installing'>Installing</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#creating-a-site'>Creating a Site</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#building-a-site'>Building a Site</a>
+                </li>
+              
+            </ul>
+            </div>
           </li>
         
-          <li>
-            <a href="/documentation#site-folder">
-              Site Folder
+          <li class=''>
+            <a href='#folder-structure'>
+              Folder Structure
             </a>
+            <div class='nav-sidebar'>
+            <ul class='nav'>
+              
+                <li class=''>
+                  <a href='#root-folder'>Root Folder</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#page-folder'>Page Folder</a>
+                </li>
+              
+            </ul>
+            </div>
           </li>
         
-          <li>
-            <a href="/documentation#page-folder">
-              Page Folder
+          <li class=''>
+            <a href='#templating'>
+              Templating
             </a>
+            <div class='nav-sidebar'>
+            <ul class='nav'>
+              
+                <li class=''>
+                  <a href='#variables-and-data'>Variables and Data</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#dynamic-pages'>Dynamic Pages</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#using-helpers'>Using Helpers</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#using-partials'>Using Partials</a>
+                </li>
+              
+            </ul>
+            </div>
           </li>
         
-          <li>
-            <a href="/documentation#helpers">
+          <li class=''>
+            <a href='#helpers'>
               Helpers
             </a>
-          </li>
-        
-          <li>
-            <a href="/documentation#partials">
-              Partials
-            </a>
+            <div class='nav-sidebar'>
+            <ul class='nav'>
+              
+                <li class=''>
+                  <a href='#layout'>layout</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#link-to'>link-to</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#css-tags'>css-tags</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#javascript-tags'>javascript-tags</a>
+                </li>
+              
+            </ul>
+            </div>
           </li>
         
         </ul>
-        </nav>
       </div>
 
-      <div class='col-sm-9'>
+      <div class='col-lg-8'>
         
           <section class='section-documentation section-getting-started'>
             <h3 id='getting-started'>Getting Started</h3>
-            <p>Install the command line utility globally via NPM. This makes <code>broccoli-taco new</code> available everywhere.</p>
+            
+              <section class='sub-section-documentation sub-section-installing'>
+              <h4 id='installing'>Installing</h4>
+              <p>Install the command line utility globally via NPM. This makes <code>broccoli-taco new</code> available everywhere.</p>
 <pre><code class="lang-sh">npm install -g broccoli-taco
 </code></pre>
-<p>Then create a new site, install dependencies, and run development server.</p>
+
+              </section>
+            
+              <section class='sub-section-documentation sub-section-creating-a-site'>
+              <h4 id='creating-a-site'>Creating a Site</h4>
+              <p>To create a new site run the <code>new</code> command with the folder name as an argument. Then install dependencies and run the development server. Your new site shoud now be available at <a href="http://localhost:4200/">http://localhost:4200/</a>. You can start adding pages, assets, and data.</p>
 <pre><code class="lang-sh">broccoli-taco new my-site
 <span class="hljs-built_in">cd</span> my-site &amp;&amp; npm install
 broccoli-taco serve
 </code></pre>
-<p>Your site shoud now be available at <a href="http://localhost:4200/">http://localhost:4200/</a>. You can start adding pages, assets, and data. To build your entire site into a folder you can run <code>broccoli-taco build &lt;folder-name&gt;</code>.</p>
 
+              </section>
+            
+              <section class='sub-section-documentation sub-section-building-a-site'>
+              <h4 id='building-a-site'>Building a Site</h4>
+              <p>To build your entire site into a folder you can run the <code>build</code> command with the destination folder as an argument. To compress assets set the <code>BROCCOLI_TACO_ENV</code> variable to <code>production</code>.</p>
+<pre><code class="lang-sh">broccoli-taco build dist
+<span class="hljs-comment"># or</span>
+BROCCOLI_TACO_ENV=production broccoli-taco build dist
+</code></pre>
+
+              </section>
+            
           </section>
           <hr />
         
-          <section class='section-documentation section-site-folder'>
-            <h3 id='site-folder'>Site Folder</h3>
-            <ul>
-<li><p><span class="icon-folder"></span> <strong>site/</strong></p>
+          <section class='section-documentation section-folder-structure'>
+            <h3 id='folder-structure'>Folder Structure</h3>
+            
+              <section class='sub-section-documentation sub-section-root-folder'>
+              <h4 id='root-folder'>Root Folder</h4>
+              <p>The only top level files are <code>site/</code>, <code>Brocfile.js</code> and <code>package.json</code>. You can add others as needed (i.e. <code>node_modules/</code>, <code>bower_components/</code>).</p>
+<ul>
+<li><p><span class="icon-folder"></span> <strong>site/</strong><br>This folder includes folders and files relevant to the entire site.</p>
 <ul>
 <li><p><span class="icon-folder"></span> <strong>helpers/</strong><br>Handlebars helpers. Each helper should have it’s own file that exports a function. The filename is the name of the helper.</p>
 </li>
@@ -132,18 +224,17 @@ broccoli-taco serve
 </li>
 </ul>
 </li>
-<li><p><span class="icon-file"></span> <strong>Brocfile.js</strong><br>For configuing some build options.</p>
+<li><p><span class="icon-file"></span> <strong>Brocfile.js</strong><br>Configure options here</p>
 </li>
 <li><p><span class="icon-file"></span> <strong>package.json</strong><br>Declare you dependecies here like any other Node project.</p>
 </li>
 </ul>
 
-          </section>
-          <hr />
-        
-          <section class='section-documentation section-page-folder'>
-            <h3 id='page-folder'>Page Folder</h3>
-            <p>Each folder within <code>site/pages/</code> represents a page. Folders can conatain other folders of pages.</p>
+              </section>
+            
+              <section class='sub-section-documentation sub-section-page-folder'>
+              <h4 id='page-folder'>Page Folder</h4>
+              <p>Each folder within <code>site/pages/</code> represents a page. Folders can conatain other folders of pages.</p>
 <ul>
 <li><p><span class="icon-folder"></span> <strong>pages/</strong><br>The first page folder is ‘pages`, making it the index page (i.e. <a href="http://broccoli-taco.com/">broccoli-taco.com</a>).</p>
 <ul>
@@ -161,39 +252,142 @@ broccoli-taco serve
 </li>
 </ul>
 
+              </section>
+            
+          </section>
+          <hr />
+        
+          <section class='section-documentation section-templating'>
+            <h3 id='templating'>Templating</h3>
+            
+              <section class='sub-section-documentation sub-section-variables-and-data'>
+              <h4 id='variables-and-data'>Variables and Data</h4>
+              <p>Each <code>index.hbs</code> file can have a corresponding <code>data.js</code> file. The value of that file is made a vailable to the template in the <code>{{page}}</code> namespace. The site can also have a global data file at <code>site/data.js</code>. Global data can be accessed through the <code>{{site}}</code> namespace.</p>
+<pre><code class="lang-js"><span class="hljs-comment">/* site/pages/about/data.js
+ * The following are equivalent
+ * This can also be a JSON file: site/pages/about/data.json
+ */</span>
+
+<span class="hljs-built_in">module</span>.exports = {
+  content: <span class="hljs-string">'Foo Bar'</span>
+}
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">return</span> {
+    content: <span class="hljs-string">'Foo Bar'</span>
+  }
+}
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> RSVP.Promise(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(resolve)</span> </span>{
+    resolve({
+      content: <span class="hljs-string">'Foo Bar'</span>
+    });
+  });
+}
+</code></pre>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- site/pages/about/index.hbs --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- available in every template, defined in site/data.js --&gt;</span>
+  </span><span class="hljs-expression">{{<span class="hljs-variable">site.title</span>}}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- only available in this template --&gt;</span>
+  </span><span class="hljs-expression">{{<span class="hljs-variable">page.content</span>}}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></span>
+</code></pre>
+
+              </section>
+            
+              <section class='sub-section-documentation sub-section-dynamic-pages'>
+              <h4 id='dynamic-pages'>Dynamic Pages</h4>
+              <p>To create a 1:N mapping between an <code>index.hbs</code> template and data you can return an array as the page’s data. The <code>filename</code> property is used as the path of the page. If no <code>filename</code> property is found then a hash of the data is used.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// site/pages/blog-post/data.js</span>
+<span class="hljs-keyword">var</span> glob = <span class="hljs-built_in">require</span>(<span class="hljs-string">'glob'</span>);
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> posts = glob.sync(<span class="hljs-string">'**/*.md'</span>, {cwd: <span class="hljs-string">'site/posts'</span>});
+
+  <span class="hljs-keyword">return</span> posts.map(post, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(post)</span> </span>{
+    <span class="hljs-keyword">var</span> postTitle = path.basename(post, <span class="hljs-string">'md'</span>);
+    <span class="hljs-keyword">return</span> {
+      title: postTitle
+    , body: fs.readFileSync(post).toString()
+    , filename: postTitle.toLowerCase()
+    }
+  });
+};
+</code></pre>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- site/pages/blog-post/index.hbs --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+  </span><span class="hljs-expression">{{<span class="hljs-variable">page.title</span>}}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+
+</span><span class="hljs-expression">{{<span class="hljs-begin-block">#markdown</span>}}</span><span class="xml">
+  </span><span class="hljs-expression">{{<span class="hljs-variable">page.body</span>}}</span><span class="xml">
+</span><span class="hljs-expression">{{<span class="hljs-end-block">/markdown</span>}}</span><span class="xml"></span>
+</code></pre>
+<p>Assuming <code>site/posts/Foo.md</code> and <code>site/posts/Bar.md</code> it would create pages at <a href="http://example.com/foo">http://example.com/foo</a> and <a href="http://example.com/bar">http://example.com/bar</a> using the <code>site/pages/blog-post/index.hbs</code> template.</p>
+
+              </section>
+            
+              <section class='sub-section-documentation sub-section-using-helpers'>
+              <h4 id='using-helpers'>Using Helpers</h4>
+              <p>Any files in <code>site/helpers/</code> will be treated as helpers. Each helper should have it’s own file and export a single function.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// site/helpers/first-name.js</span>
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(value)</span> </span>{
+  <span class="hljs-keyword">return</span> value.split(<span class="hljs-string">' '</span>)[<span class="hljs-number">0</span>];
+};
+</code></pre>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- site/pages/about/index.hbs --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">first-name</span> <span class="hljs-variable">site.author.name</span>}}</span><span class="xml"></span>
+</code></pre>
+<p>Helpers can require other modules or files like a normal node program. For example, to create a markdown helper than can require a file or be used is a block:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// page/helpers/markdown.js</span>
+<span class="hljs-keyword">var</span> marked = <span class="hljs-built_in">require</span>(<span class="hljs-string">'marked'</span>);
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(value)</span> </span>{
+  <span class="hljs-keyword">var</span> input;
+  <span class="hljs-keyword">if</span> (<span class="hljs-string">'string'</span> === <span class="hljs-keyword">typeof</span> value) {
+    input = fs.readFileSync(path.join(<span class="hljs-string">'site/pages'</span>, value)+<span class="hljs-string">'.md'</span>).toString();
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">'object'</span> === <span class="hljs-keyword">typeof</span> value) {
+    input = value.fn(<span class="hljs-keyword">this</span>).trim();
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Handlebars.SafeString(marked(input));
+}
+</code></pre>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- site/pages/about/index.hbs --&gt;</span>
+
+</span><span class="hljs-expression">{{<span class="hljs-variable">markdown</span> <span class="hljs-string">"about/bio"</span>}}</span><span class="xml">
+
+</span><span class="hljs-expression">{{<span class="hljs-begin-block">#markdown</span>}}</span><span class="xml">
+# Contact
+- [email](mailto:foo@bar.com)
+</span><span class="hljs-expression">{{<span class="hljs-end-block">/markdown</span>}}</span><span class="xml"></span>
+</code></pre>
+
+              </section>
+            
+              <section class='sub-section-documentation sub-section-using-partials'>
+              <h4 id='using-partials'>Using Partials</h4>
+              <p>Partials should go in <code>site/partials/</code>. They work like regular Handlebars partials.</p>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- renders 'site/partials/footer.hbs' --&gt;</span>
+</span><span class="hljs-expression">{{&gt;<span class="hljs-variable">footer</span>}}</span><span class="xml"></span>
+</code></pre>
+
+              </section>
+            
           </section>
           <hr />
         
           <section class='section-documentation section-helpers'>
             <h3 id='helpers'>Helpers</h3>
-            <p>There are 4 built in helpers. You can add your own by creating a file in <code>site/helpers</code>.</p>
-<hr>
-
-<p><strong>css-tags</strong> (args…)<br>Adds fingerprinted site.css and page.css (when available) files to the page.</p>
-<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- global 'site.css' and current page's 'page.css' --&gt;</span>
-</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span>}}</span><span class="xml">
-
-<span class="hljs-comment">&lt;!-- only that page's 'page.css' --&gt;</span>
-</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span> '<span class="hljs-variable">page</span>'}}</span><span class="xml">
-
-<span class="hljs-comment">&lt;!-- only the global 'site.css' --&gt;</span>
-</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span> '<span class="hljs-variable">site</span>'}}</span><span class="xml"></span>
-</code></pre>
-<hr>
-
-<p><strong>javascript-tags</strong> (args…)<br>Adds fingerprinted site.js and page.js (when available) files to the page.</p>
-<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- global 'site.js' and current page's 'page.js' --&gt;</span>
-</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span>}}</span><span class="xml">
-
-<span class="hljs-comment">&lt;!-- only that page's 'page.js' --&gt;</span>
-</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span> '<span class="hljs-variable">page</span>'}}</span><span class="xml">
-
-<span class="hljs-comment">&lt;!-- only the global 'site.js' --&gt;</span>
-</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span> '<span class="hljs-variable">site</span>'}}</span><span class="xml"></span>
-</code></pre>
-<hr>
-
-<p><strong>layout</strong> ( [name] )<br>A block helper to wrap content in other markup. The layout file should include <code>{{{yield}}}</code> somewhere. Layouts can be nested inside each other.</p>
+            
+              <section class='sub-section-documentation sub-section-layout'>
+              <h4 id='layout'>layout</h4>
+              <p><strong>arguments:</strong> ( [name] )<br>A block helper to wrap content in other markup. The layout file should include <code>{{{yield}}}</code> somewhere. Layouts can be nested inside each other.</p>
 <pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- defaults to 'site/layouts/default.hbs' --&gt;</span>
 </span><span class="hljs-expression">{{<span class="hljs-begin-block">#layout</span>}}</span><span class="xml">
   <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
@@ -205,9 +399,12 @@ broccoli-taco serve
 
 </span><span class="hljs-expression">{{<span class="hljs-end-block">/layout</span>}}</span><span class="xml"></span>
 </code></pre>
-<hr>
 
-<p><strong>link-to</strong> (page [, model] [, attributes] )<br>Link to a page. The helper makes sure you don’t have any broken links.</p>
+              </section>
+            
+              <section class='sub-section-documentation sub-section-link-to'>
+              <h4 id='link-to'>link-to</h4>
+              <p><strong>arguments:</strong> (page [, model] [, attributes] )<br>Link to a page. The helper makes sure you don’t have any broken links.</p>
 <pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- link to /documentation --&gt;</span>
 </span><span class="hljs-expression">{{<span class="hljs-begin-block">#link-to </span>'<span class="hljs-variable">documentation</span>' <span class="hljs-variable">class</span>='<span class="hljs-variable">foo</span>' <span class="hljs-variable">target</span>='_<span class="hljs-variable">blank</span>'}}</span><span class="xml">
   Documentation
@@ -221,19 +418,46 @@ broccoli-taco serve
 </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml"></span>
 </code></pre>
 
-          </section>
-          <hr />
-        
-          <section class='section-documentation section-partials'>
-            <h3 id='partials'>Partials</h3>
-            <p>Partials should go in <code>site/partials/</code>. They work like regular Handlebars partials.</p>
-<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- renders 'site/partials/footer.hbs' --&gt;</span>
-</span><span class="hljs-expression">{{&gt;<span class="hljs-variable">footer</span>}}</span><span class="xml"></span>
+              </section>
+            
+              <section class='sub-section-documentation sub-section-css-tags'>
+              <h4 id='css-tags'>css-tags</h4>
+              <p><strong>arguments:</strong> (args…)<br>Adds fingerprinted site.css and page.css (when available) files to the page.</p>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- global 'site.css' and current page's 'page.css' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span>}}</span><span class="xml">
+
+<span class="hljs-comment">&lt;!-- only that page's 'page.css' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span> '<span class="hljs-variable">page</span>'}}</span><span class="xml">
+
+<span class="hljs-comment">&lt;!-- only the global 'site.css' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">css-tags</span> '<span class="hljs-variable">site</span>'}}</span><span class="xml"></span>
 </code></pre>
 
+              </section>
+            
+              <section class='sub-section-documentation sub-section-javascript-tags'>
+              <h4 id='javascript-tags'>javascript-tags</h4>
+              <p><strong>arguments:</strong> (args…)<br>Adds fingerprinted site.js and page.js (when available) files to the page.</p>
+<pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- global 'site.js' and current page's 'page.js' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span>}}</span><span class="xml">
+
+<span class="hljs-comment">&lt;!-- only that page's 'page.js' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span> '<span class="hljs-variable">page</span>'}}</span><span class="xml">
+
+<span class="hljs-comment">&lt;!-- only the global 'site.js' --&gt;</span>
+</span><span class="hljs-expression">{{<span class="hljs-variable">javascript-tags</span> '<span class="hljs-variable">site</span>'}}</span><span class="xml"></span>
+</code></pre>
+
+              </section>
+            
           </section>
           <hr />
         
+
+        <p>Natuarlly this site is made using Broccoli Taco. It’s hosted on Github Pages The source can be viewed <a href="https://github.com/moudy/broccoli-taco/tree/gh-pages-dev/site">here</a>.</p>
+
+
+
       </div>
 
     </div>
@@ -241,8 +465,17 @@ broccoli-taco serve
 
 
     <footer class='footer'>
+      <div class='container text-centered'>
+        <a href="/">
+          Home
+        </a>
+          &middot;
+        <a href="/documentation">Documentation</a>
+          &middot;
+        <a href='https://github.com/moudy/broccoli-taco'>Github</a>
+      </div>
     </footer>
-    <script src="/site-ac06943b25467a9f5a8aacab78f824b5.js"></script>
+    <script src="/site-6aeb1ffcef2c9852ebb081eaaac272f7.js"></script>
   </body>
 </html>
 
