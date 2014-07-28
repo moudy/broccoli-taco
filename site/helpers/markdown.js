@@ -8,6 +8,7 @@ var renderer = new marked.Renderer();
 
 marked.setOptions({
   highlight: function (code, lang) {
+    if (!lang) return hljs.highlightAuto(code).value;
     return hljs.highlight(lang, code).value;
   }
 , renderer: renderer

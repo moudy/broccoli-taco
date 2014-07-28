@@ -3,7 +3,8 @@
 <div class='hero'>
   <div class='container'>
     <h2 class='tagline'>{{page.tagline}}</h2>
-    <p class='text-big'>An overview of files and folders.</p>
+    <p class='text-big'>{{page.subTagline}}</p>
+    {{>made-with}}
   </div>
 </div>
 
@@ -12,13 +13,22 @@
 
 
       <div class='col-lg-2 nav-sidebar'>
-        <ul class='list-group nav content-nav hidden-md hidden-sm hidden-xs'>
+        <ul class='content-nav nav hidden-md hidden-sm hidden-xs'>
         {{#each page.sections}}
-        <li class='list-group-item'>
-          <a href='#{{id}}'>
-            {{title}}
-          </a>
-        </li>
+          <li class=''>
+            <a href='#{{id}}'>
+              {{title}}
+            </a>
+            <div class='nav-sidebar'>
+            <ul class='nav'>
+              {{#each subSections}}
+                <li class=''>
+                  <a href='#{{id}}'>{{title}}</a>
+                </li>
+              {{/each}}
+            </ul>
+            </div>
+          </li>
         {{/each}}
         </ul>
       </div>
@@ -27,10 +37,17 @@
         {{#each page.sections}}
           <section class='section-documentation section-{{id}}'>
             <h3 id='{{id}}'>{{title}}</h3>
-            {{#markdown}}{{{body}}}{{/markdown}}
+            {{#each subSections}}
+              <section class='sub-section-documentation sub-section-{{id}}'>
+              <h4 id='{{id}}'>{{title}}</h4>
+              {{#markdown}}{{{body}}}{{/markdown}}
+              </section>
+            {{/each}}
           </section>
           <hr />
         {{/each}}
+
+        {{>made-with}}
       </div>
 
     </div>

@@ -13,6 +13,15 @@
     {{>header}}
     {{{yield}}}
     <footer class='footer'>
+      <div class='container'>
+        {{#link-to 'index'}}
+          Home
+        {{/link-to}}
+          &middot;
+        {{link-to 'documentation'}}
+          &middot;
+        <a href='{{site.githubUrl}}'>Github</a>
+      </div>
     </footer>
     {{{javascript-tags}}}
   </body>

@@ -3,3 +3,4 @@ Partials should go in `site/partials/`. They work like regular Handlebars partia
 <!-- renders 'site/partials/footer.hbs' -->
 {{>footer}}
 ```
+

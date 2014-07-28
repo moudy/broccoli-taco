@@ -1,4 +1,7 @@
-- <span class="icon-folder"></span> **site/**
+The only top level files are `site/`, `Brocfile.js` and `package.json`. You can add others as needed (i.e. `node_modules/`, `bower_components/`).
+
+- <span class="icon-folder"></span> **site/**  
+  This folder includes folders and files relevant to the entire site.
   - <span class="icon-folder"></span> **helpers/**  
     Handlebars helpers. Each helper should have it's own file that exports a function. The filename is the name of the helper.
 
@@ -24,7 +27,7 @@
     Javascript file included on every page.
 
 - <span class="icon-file"></span> **Brocfile.js**  
-  For configuing some build options.
+  Configure options here
 
 - <span class="icon-file"></span> **package.json**  
   Declare you dependecies here like any other Node project.

@@ -107,7 +107,9 @@ body {
 }
 
 .footer {
-  padding: 30px 0;
+  margin-top: 60px;
+  border-top: 1px solid #eee;
+  padding: 60px 0 90px;
 }
 
 .nav {
@@ -121,19 +123,39 @@ body {
 }
 
 .content-nav {
-  padding-top: 20px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
 
   &.affix {
     top: 0;
   }
 
-  .list-group-item {
-    padding: 0;
+  .list-group {
+    margin-bottom: 0;
+  }
 
+  > li {
+    > a {
+      background-color: $gray-lighter;
+      color: $brand-dark;
+    }
     &.active {
-      a {
+      > a {
         color: white;
+        background-color: $brand-primary;
         &:hover { background-color: $brand-primary; }
+      }
+    }
+
+    li {
+      font-size: 80%;
+      a { color: $gray-light; }
+      &.active {
+        > a {
+          color: $brand-primary;
+          background-color: lighten($brand-primary, 60%);
+          &:hover { background-color: lighten($brand-primary, 55%); }
+        }
       }
     }
   }
@@ -146,7 +168,7 @@ p code {
   font-size: 80%;
 }
 
-.section-site-folder, .section-page-folder {
+.sub-section-root-folder, .sub-section-page-folder {
   $list-padding: 20px;
   > ul {
     position: relative;
@@ -162,6 +184,14 @@ p code {
 .section-documentation {
   &:first-of-type {
     margin-top: 0;
+  }
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.sub-section-documentation {
+  &:first-of-type {
+    margin-top: 20px;
   }
   margin-top: 60px;
   margin-bottom: 60px;
