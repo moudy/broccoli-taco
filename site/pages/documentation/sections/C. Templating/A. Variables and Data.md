@@ -1,4 +1,4 @@
-Each `index.hbs` file can have a corresponding `data.js` file. The value of that file is made a vailable to the template in the `{{page}}` namespace. The site can also have a global data file at `site/data.js`. Global data can be accessed through the `{{site}}` namespace.
+Each `index.hbs` file can have a corresponding `data.js` file. The value of that file is made available to the template in the `{{page}}` namespace. The site can also have a global data file at `site/data.js`. Global data can be accessed through the `{{site}}` namespace.
 
 ``` js
 /* site/pages/about/data.js

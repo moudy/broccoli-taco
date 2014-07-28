@@ -1,4 +1,4 @@
-Any files in `site/helpers/` will be treated as helpers. Each helper should have it's own file and export a single function.
+Any files in `site/helpers/` will be treated as helpers. Each helper should have its own file and export a single function.
 
 ``` js
 // site/helpers/first-name.js
@@ -13,7 +13,7 @@ module.exports = function (value) {
 {{first-name site.author.name}}
 ```
 
-Helpers can require other modules or files like a normal node program. For example, to create a markdown helper than can require a file or be used is a block:
+Helpers can require other modules or files like a normal node program. For example, to create a markdown helper that can require a file or be used as a block:
 ``` js
 // page/helpers/markdown.js
 var marked = require('marked');
