@@ -48,7 +48,7 @@
   <div class='container'>
     <h2 class='tagline'>Documentation</h2>
     <p class='text-big'>An overview of files, folders, helpers and partials.</p>
-    <p>Natuarlly this site is made using Broccoli Taco. It’s hosted on Github Pages. The source can be viewed <a href="https://github.com/moudy/broccoli-taco/tree/gh-pages-dev/site">here</a>.</p>
+    <p>Naturally, this site is made using Broccoli Taco. It’s hosted on Github Pages. The source can be viewed <a href="https://github.com/moudy/broccoli-taco/tree/gh-pages-dev/site">here</a>.</p>
 
 
 
@@ -207,27 +207,27 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
 <ul>
 <li><p><span class="icon-folder"></span> <strong>site/</strong><br>This folder includes folders and files relevant to the entire site.</p>
 <ul>
-<li><p><span class="icon-folder"></span> <strong>helpers/</strong><br>Handlebars helpers. Each helper should have it’s own file that exports a function. The filename is the name of the helper.</p>
+<li><p><span class="icon-folder"></span> <strong>helpers/</strong><br>Handlebars helpers. Each helper should have its own file that exports a function. The filename is the name of the helper.</p>
 </li>
-<li><p><span class="icon-folder"></span> <strong>layouts/</strong><br>Layouts used by the <code>layout</code> helper. The file should conatin a <code>{{{yield}}}</code>. This is where the page content will be rendered.</p>
+<li><p><span class="icon-folder"></span> <strong>layouts/</strong><br>Layouts used by the <code>layout</code> helper. The file should contain a <code>{{{yield}}}</code>. This is where the page content will be rendered.</p>
 </li>
 <li><p><span class="icon-folder"></span> <strong>pages/</strong><br>The pages of the site. See the next section for details.</p>
 </li>
-<li><p><span class="icon-folder"></span> <strong>partials/</strong><br>Handlebars partials made avaible in the view (i.e. <code>{{&gt;header}}</code>).</p>
+<li><p><span class="icon-folder"></span> <strong>partials/</strong><br>Handlebars partials made available in the view (i.e. <code>{{&gt;header}}</code>).</p>
 </li>
-<li><p><span class="icon-folder"></span> <strong>static/</strong><br>This folder is copied over as is.</p>
+<li><p><span class="icon-folder"></span> <strong>static/</strong><br>This folder is copied over as-is.</p>
 </li>
-<li><p><span class="icon-file"></span> <strong>data.js</strong><br>Data made availble to all templates as the site object (i.e. <code>{{site.name}}</code>). See the data sesction for more deatils.</p>
+<li><p><span class="icon-file"></span> <strong>data.js</strong><br>Data made available to all templates as the site object (i.e. <code>{{site.name}}</code>). See the data section for more details.</p>
 </li>
 <li><p><span class="icon-file"></span> <strong>site.scss</strong><br>CSS file included on every page.</p>
 </li>
-<li><p><span class="icon-file"></span> <strong>site.js</strong><br>Javascript file included on every page.</p>
+<li><p><span class="icon-file"></span> <strong>site.js</strong><br>JavaScript file included on every page.</p>
 </li>
 </ul>
 </li>
 <li><p><span class="icon-file"></span> <strong>Brocfile.js</strong><br>Configure options here</p>
 </li>
-<li><p><span class="icon-file"></span> <strong>package.json</strong><br>Declare you dependecies here like any other Node project.</p>
+<li><p><span class="icon-file"></span> <strong>package.json</strong><br>Declare you dependencies here like any other Node project.</p>
 </li>
 </ul>
 
@@ -235,11 +235,11 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
             
               <section class='sub-section-documentation sub-section-page-folder'>
               <h4 id='page-folder'>Page Folder</h4>
-              <p>Each folder within <code>site/pages/</code> represents a page. Folders can conatain other folders of pages.</p>
+              <p>Each folder within <code>site/pages/</code> represents a page. Folders can contain other folders of pages.</p>
 <ul>
-<li><p><span class="icon-folder"></span> <strong>pages/</strong><br>The first page folder is ‘pages`, making it the index page (i.e. <a href="http://broccoli-taco.com/">broccoli-taco.com</a>).</p>
+<li><p><span class="icon-folder"></span> <strong>pages/</strong><br>The first page folder is <code>pages</code>, making it the index page (i.e. <a href="http://broccoli-taco.com/">broccoli-taco.com</a>).</p>
 <ul>
-<li><p><span class="icon-file"></span> <strong>index.hbs</strong><br>The Handlebars template for the page. Here you can render partials, use helpers and access the global <code>{{site}}</code> object and the page specific <code>{{page}}</code> object. This is the only required file for a page folder.</p>
+<li><p><span class="icon-file"></span> <strong>index.hbs</strong><br>The Handlebars template for the page. Here you can render partials, use helpers and access the global <code>{{site}}</code> object and the page-specific <code>{{page}}</code> object. This is the only required file for a page folder.</p>
 </li>
 <li><p><span class="icon-file"></span> <strong>page.scss</strong><br>A SCSS file that gets compiled to CSS and included on the page. Useful if you have CSS only relevant to that specific page.</p>
 </li>
@@ -247,7 +247,7 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
 </li>
 <li><p><span class="icon-file"></span> <strong>data.(js|json)</strong><br>The data provided by this file is exposed to the Handlebars template as the <code>{{page}}</code> object. It can be a JSON object, object literal, or a function returning a value or Promise. If an array is returned, a page for each item in the array is generated allowing you to use the same <code>index.hbs</code> template with a set of data (like a list of blog posts).</p>
 </li>
-<li><p><span class="icon-folder"></span> <strong>documentation/</strong><br>Any nested folder that has an <code>index.hbs</code> file becomes another page. For example to add a page at <a href="http://broccoli-taco.com/documentation/">broccoli-taco.com/documentation</a> you would create <code>site/pages/documentation/index.hbs</code>.</p>
+<li><p><span class="icon-folder"></span> <strong>documentation/</strong><br>Any nested folder that has an <code>index.hbs</code> file becomes another page. For example, to add a page at <a href="http://broccoli-taco.com/documentation/">broccoli-taco.com/documentation</a>, you would create <code>site/pages/documentation/index.hbs</code>.</p>
 </li>
 </ul>
 </li>
@@ -263,7 +263,7 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
             
               <section class='sub-section-documentation sub-section-variables-and-data'>
               <h4 id='variables-and-data'>Variables and Data</h4>
-              <p>Each <code>index.hbs</code> file can have a corresponding <code>data.js</code> file. The value of that file is made a vailable to the template in the <code>{{page}}</code> namespace. The site can also have a global data file at <code>site/data.js</code>. Global data can be accessed through the <code>{{site}}</code> namespace.</p>
+              <p>Each <code>index.hbs</code> file can have a corresponding <code>data.js</code> file. The value of that file is made available to the template in the <code>{{page}}</code> namespace. The site can also have a global data file at <code>site/data.js</code>. Global data can be accessed through the <code>{{site}}</code> namespace.</p>
 <pre><code class="lang-js"><span class="hljs-comment">/* site/pages/about/data.js
  * The following are equivalent
  * This can also be a JSON file: site/pages/about/data.json
@@ -303,7 +303,7 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
             
               <section class='sub-section-documentation sub-section-dynamic-pages'>
               <h4 id='dynamic-pages'>Dynamic Pages</h4>
-              <p>To create a 1:N mapping between an <code>index.hbs</code> template and data you can return an array as the page’s data. The <code>filename</code> property is used as the path of the page. If no <code>filename</code> property is found then a hash of the data is used.</p>
+              <p>To create a 1:N mapping between an <code>index.hbs</code> template and data you can return an array as the page’s data. The <code>filename</code> property is used as the path of the page. If no <code>filename</code> property is found, a hash of the data is used.</p>
 <pre><code class="lang-js"><span class="hljs-comment">// site/pages/blog-post/data.js</span>
 <span class="hljs-keyword">var</span> glob = <span class="hljs-built_in">require</span>(<span class="hljs-string">'glob'</span>);
 
@@ -329,13 +329,13 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
   </span><span class="hljs-expression">{{<span class="hljs-variable">page.body</span>}}</span><span class="xml">
 </span><span class="hljs-expression">{{<span class="hljs-end-block">/markdown</span>}}</span><span class="xml"></span>
 </code></pre>
-<p>Assuming <code>site/posts/Foo.md</code> and <code>site/posts/Bar.md</code> it would create pages at <a href="http://example.com/foo">http://example.com/foo</a> and <a href="http://example.com/bar">http://example.com/bar</a> using the <code>site/pages/blog-post/index.hbs</code> template.</p>
+<p>Assuming <code>site/posts/Foo.md</code> and <code>site/posts/Bar.md</code>, it would create pages at <a href="http://example.com/foo">http://example.com/foo</a> and <a href="http://example.com/bar">http://example.com/bar</a> using the <code>site/pages/blog-post/index.hbs</code> template.</p>
 
               </section>
             
               <section class='sub-section-documentation sub-section-using-helpers'>
               <h4 id='using-helpers'>Using Helpers</h4>
-              <p>Any files in <code>site/helpers/</code> will be treated as helpers. Each helper should have it’s own file and export a single function.</p>
+              <p>Any files in <code>site/helpers/</code> will be treated as helpers. Each helper should have its own file and export a single function.</p>
 <pre><code class="lang-js"><span class="hljs-comment">// site/helpers/first-name.js</span>
 
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(value)</span> </span>{
@@ -345,7 +345,7 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
 <pre><code class="lang-hbs"><span class="xml"><span class="hljs-comment">&lt;!-- site/pages/about/index.hbs --&gt;</span>
 </span><span class="hljs-expression">{{<span class="hljs-variable">first-name</span> <span class="hljs-variable">site.author.name</span>}}</span><span class="xml"></span>
 </code></pre>
-<p>Helpers can require other modules or files like a normal node program. For example, to create a markdown helper than can require a file or be used is a block:</p>
+<p>Helpers can require other modules or files like a normal node program. For example, to create a markdown helper that can require a file or be used as a block:</p>
 <pre><code class="lang-js"><span class="hljs-comment">// page/helpers/markdown.js</span>
 <span class="hljs-keyword">var</span> marked = <span class="hljs-built_in">require</span>(<span class="hljs-string">'marked'</span>);
 
@@ -455,7 +455,7 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
           <hr />
         
 
-        <p>Natuarlly this site is made using Broccoli Taco. It’s hosted on Github Pages. The source can be viewed <a href="https://github.com/moudy/broccoli-taco/tree/gh-pages-dev/site">here</a>.</p>
+        <p>Naturally, this site is made using Broccoli Taco. It’s hosted on Github Pages. The source can be viewed <a href="https://github.com/moudy/broccoli-taco/tree/gh-pages-dev/site">here</a>.</p>
 
 
 
