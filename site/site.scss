@@ -124,7 +124,8 @@ body {
 
 .content-nav {
   margin-top: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid $gray-lighter;
+  border-top: 0 none;
 
   &.affix {
     top: 0;
@@ -136,13 +137,14 @@ body {
 
   > li {
     > a {
-      background-color: $gray-lighter;
+      border-top: 1px solid $gray-lighter;
+      @include linear-gradient(lighten($gray-lighter, 20%), lighten($gray-lighter, 0%));
       color: $brand-dark;
     }
     &.active {
       > a {
         color: white;
-        background-color: $brand-primary;
+        @include linear-gradient(lighten($brand-primary, 40%), lighten($brand-primary, 0%));
         &:hover { background-color: $brand-primary; }
       }
     }
