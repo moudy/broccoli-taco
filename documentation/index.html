@@ -176,17 +176,18 @@
             
               <section class='sub-section-documentation sub-section-creating-a-site'>
               <h4 id='creating-a-site'>Creating a Site</h4>
-              <p>To create a new site run the <code>new</code> command with the folder name as an argument. Then install dependencies and run the development server. Your new site shoud now be available at <a href="http://localhost:4200/">http://localhost:4200/</a>. You can start adding pages, assets, and data.</p>
+              <p>To create a new site, run the <code>new</code> command with the folder name as an argument. Then, install dependencies and run the development server. Your new site should now be available at <a href="http://localhost:4200/">http://localhost:4200/</a>.</p>
 <pre><code class="lang-sh">broccoli-taco new my-site
 <span class="hljs-built_in">cd</span> my-site &amp;&amp; npm install
 broccoli-taco serve
 </code></pre>
+<p>Now you can start adding pages, assets, and data.</p>
 
               </section>
             
               <section class='sub-section-documentation sub-section-building-a-site'>
               <h4 id='building-a-site'>Building a Site</h4>
-              <p>To build your entire site into a folder you can run the <code>build</code> command with the destination folder as an argument. To compress assets set the <code>BROCCOLI_TACO_ENV</code> variable to <code>production</code>.</p>
+              <p>To build your entire site into a folder, you can run the <code>build</code> command with the destination folder as an argument. To compress assets, set the <code>BROCCOLI_TACO_ENV</code> variable to <code>production</code>.</p>
 <pre><code class="lang-sh">broccoli-taco build dist
 <span class="hljs-comment"># or</span>
 BROCCOLI_TACO_ENV=production broccoli-taco build dist
