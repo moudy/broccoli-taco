@@ -16,3 +16,14 @@
   }
 }
 
+.content-nav {
+  @media (min-width: $screen-sm-min) {
+    width: 132px;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 132px;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 165px;
+  }
+}

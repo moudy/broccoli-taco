@@ -10,21 +10,20 @@
   <div class='container page-content'>
     <div class='row'>
 
-      <div class='col-sm-2 hidden-xs'>
-        <nav class='content-nav'>
-        <ul class='nav'>
+
+      <div class='col-lg-2 nav-sidebar'>
+        <ul class='list-group nav content-nav hidden-md hidden-sm hidden-xs'>
         {{#each page.sections}}
-          <li>
-            {{#link-to 'documentation' anchor=id}}
-              {{title}}
-            {{/link-to}}
-          </li>
+        <li class='list-group-item'>
+          <a href='#{{id}}'>
+            {{title}}
+          </a>
+        </li>
         {{/each}}
         </ul>
-        </nav>
       </div>
 
-      <div class='col-sm-9'>
+      <div class='col-lg-8'>
         {{#each page.sections}}
           <section class='section-documentation section-{{id}}'>
             <h3 id='{{id}}'>{{title}}</h3>

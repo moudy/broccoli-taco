@@ -1,6 +1,8 @@
 /* globals window: false */
 
 var $ = window.jQuery = require('../bower_components/jquery/dist/jquery.js');
+require('../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js');
+require('../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js');
 
 function start () {
   $('body').on('click', '[data-toggle]', function (e) {
@@ -18,11 +20,22 @@ function start () {
 
     var $target = $('#'+anchor);
     $('html, body').stop(true, true).animate({
-      scrollTop: $target.offset().top - 70
+      scrollTop: $target.offset().top - 20
     }, 300, 'swing', function () {
       window.location.hash = anchor;
     });
   });
+
+  $('.content-nav').affix({
+    offset: {
+      top: $('.header').outerHeight()+$('.hero').outerHeight() + 30
+    , bottom: function () {
+        return (this.bottom = $('.footer').outerHeight(true))
+      }
+    }
+  });
+
+  $('body').scrollspy({ target: '.nav-sidebar', offset: 40 })
 
 }
 

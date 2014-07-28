@@ -9,6 +9,7 @@ html {
 
 body {
   font-weight: 200;
+  position: relative;
 }
 
 .page-content {
@@ -120,16 +121,21 @@ body {
 }
 
 .content-nav {
-  text-align: right;
   padding-top: 20px;
-  li a {
-    color: $gray-light;
-    padding: 5px;
-    &:hover {
-      color: $brand-dark;
-      background-color: transparent;
-    }
 
+  &.affix {
+    top: 0;
+  }
+
+  .list-group-item {
+    padding: 0;
+
+    &.active {
+      a {
+        color: white;
+        &:hover { background-color: $brand-primary; }
+      }
+    }
   }
 }
 
