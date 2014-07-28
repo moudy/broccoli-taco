@@ -8,18 +8,7 @@ html {
 }
 
 body {
-  //padding-top: $navbar-height;
   font-weight: 200;
-}
-
-.headroom {
-  @include transform-origin(top left);
-}
-.headroom--pinned {
-  @include animation(animate-down-in 300ms ease-out both);
-}
-.headroom--unpinned {
-  @include animation(animate-up-out 300ms ease-in both);
 }
 
 .page-content {
@@ -64,7 +53,7 @@ body {
 }
 
 .hero {
-  padding-top: 50px + $navbar-height;
+  padding-top: 50px;
   padding-bottom: 60px;
   background-color: $hero-bg;
   text-align: center;
@@ -131,8 +120,6 @@ body {
 }
 
 .content-nav {
-  position: fixed;
-  top: 290px;
   text-align: right;
   padding-top: 20px;
   li a {
