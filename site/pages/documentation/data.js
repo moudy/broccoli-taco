@@ -13,7 +13,7 @@ function toString (filepath) {
 }
 
 function toId (title) {
-  return title.toLowerCase().replace(/\s/g, '-');
+  return title.toLowerCase().replace(/\s/g, '-').replace(/\./g, '-');
 }
 
 module.exports = function () {
