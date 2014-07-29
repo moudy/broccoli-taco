@@ -21,13 +21,15 @@ body {
 }
 
 .navbar-brand {
-  //background-image: url('/static/broccoli-taco-logo.svg');
-  background-size: 60% auto;
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-shadow: 0 1px 4px white;
   font-weight: 700;
   font-family: $headings-font-family;
+}
+
+.logo-icon {
+  background-image: url('/static/broccoli-taco-logo.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .icon-folder, .icon-file {
@@ -61,6 +63,12 @@ body {
   position: relative;
   border-bottom: 1px solid $brand-primary;
   @include radial-gradient(circle at 50% 50%, #fff, lighten($brand-primary, 50%));
+
+  .logo-icon {
+    width: 280px;
+    height: 128px;
+    display: inline-block;
+  }
 
   .tagline {
     color: $brand-dark;
@@ -109,7 +117,14 @@ body {
 .footer {
   margin-top: 60px;
   border-top: 1px solid #eee;
-  padding: 60px 0 90px;
+  padding: 60px 0 0;
+
+  .logo-icon {
+    display: block;
+    width: 280px;
+    height: 128px;
+    margin: 60px auto 0;
+  }
 }
 
 .nav {
