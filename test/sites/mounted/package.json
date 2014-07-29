@@ -1,0 +1,8 @@
+{
+  "name": "mounted",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "broccoli-taco": "0.0.0"
+  }
+}

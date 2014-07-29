@@ -5,9 +5,6 @@ var path = require('path');
 var exec = require('child_process').exec;
 var walkSync = require('walk-sync');
 
-var testAppPath = path.join(findup('test'), 'test-site');
-process.chdir(testAppPath);
-
 var test = {
   contain: function (key, expected) {
     return function () {
@@ -18,95 +15,127 @@ var test = {
   }
 };
 
-var destName = 'dist';
-var testAppPathDestPath = path.join(testAppPath, destName);
-
-function toString (filepath) {
-  return fs.readFileSync(path.join(testAppPathDestPath, filepath)).toString();
-}
-
-function rmDist (done) { exec('rm -rf '+destName, done); }
-
 describe('broccoli-taco build <destination>', function () {
 
-  before(rmDist);
+  context('Basic site', function () {
+    var testSitePath = path.join(findup('test'), 'sites/basic');
+    process.chdir(testSitePath);
+    var distName = 'dist';
+    var testSitePathDistPath = path.join(testSitePath, distName);
 
-  before(function (done) {
-    exec('BROCCOLI_TACO_ENV=production ../../bin/broccoli-taco build '+destName, done);
-  });
+    function rmDist (done) { exec('rm -rf '+distName, done); }
 
-  before(function () {
-    this.indexHTML = toString('index.html');
-    this.aboutHTML = toString('about/index.html');
-    this.contactHTML = toString('contact/index.html');
-  });
+    function toString (filepath) {
+      return fs.readFileSync(path.join(testSitePathDistPath, filepath)).toString();
+    }
 
-  after(rmDist);
+    before(rmDist);
 
-  context('HTML', function () {
-    it('builds the index page', test.contain('indexHTML', 'PAGES/INDEX'));
-    it('builds with delfault layout', test.contain('indexHTML', 'LAYOUTS/DEFAULT'));
-    it('builds sub-pages', test.contain('aboutHTML', 'PAGES/ABOUT'));
-    it('builds sub-pages with layout', test.contain('aboutHTML', 'LAYOUTS/DEFAULT'));
-    it('builds with nested layouts', test.contain('aboutHTML', ['LAYOUTS/DEFAULT', 'LAYOUTS/ABOUT']));
+    before(function (done) {
+      exec('BROCCOLI_TACO_ENV=production ../../../bin/broccoli-taco build '+distName, done);
+    });
 
-    it('builds with partials', test.contain('indexHTML', 'PARTIALS/NAV'));
-    it('builds with partials', test.contain('aboutHTML', 'PARTIALS/NAV'));
+    before(function () {
+      this.indexHTML = toString('index.html');
+      this.aboutHTML = toString('about/index.html');
+      this.contactHTML = toString('contact/index.html');
+    });
 
-    it('builds with link-to helper', test.contain('indexHTML', '<a href="/foo/about">About</a>'));
-    it('builds with block link-to helper', test.contain('indexHTML', '<a href="/foo/contact">Call Me Maybe</a>'));
+    after(rmDist);
 
-    it('includes site.css on index page', test.contain('indexHTML', '<link href="/foo/site'));
-    it('includes page.css on index page', test.contain('indexHTML', '<link href="/foo/page'));
+    context('HTML', function () {
+      it('builds the index page', test.contain('indexHTML', 'PAGES/INDEX'));
+      it('builds with delfault layout', test.contain('indexHTML', 'LAYOUTS/DEFAULT'));
+      it('builds sub-pages', test.contain('aboutHTML', 'PAGES/ABOUT'));
+      it('builds sub-pages with layout', test.contain('aboutHTML', 'LAYOUTS/DEFAULT'));
+      it('builds with nested layouts', test.contain('aboutHTML', ['LAYOUTS/DEFAULT', 'LAYOUTS/ABOUT']));
 
-    it('includes site.js on index page', test.contain('indexHTML', '<script src="/foo/site'));
-    it('includes page.js on index page', test.contain('indexHTML', '<script src="/foo/page'));
+      it('builds with partials', test.contain('indexHTML', 'PARTIALS/NAV'));
+      it('builds with partials', test.contain('aboutHTML', 'PARTIALS/NAV'));
 
-    it('includes site.css on sub-page page', test.contain('aboutHTML', '<link href="/foo/site'));
-    it('includes page.css on sub-page', test.contain('aboutHTML', '<link href="/foo/about/page'));
-  });
+      it('builds with link-to helper', test.contain('indexHTML', '<a href="/about">About</a>'));
+      it('builds with block link-to helper', test.contain('indexHTML', '<a href="/contact">Call Me Maybe</a>'));
 
-  context('Data', function () {
-    it('makes site.js available to all pages', function () {
-      [this.indexHTML, this.aboutHTML, this.contactHTML].forEach(function (html) {
-        expect(html).to.contain('SITE_DATA');
+      it('includes site.css on index page', test.contain('indexHTML', '<link href="/site'));
+      it('includes page.css on index page', test.contain('indexHTML', '<link href="/page'));
+
+      it('includes site.js on index page', test.contain('indexHTML', '<script src="/site'));
+      it('includes page.js on index page', test.contain('indexHTML', '<script src="/page'));
+
+      it('includes site.css on sub-page page', test.contain('aboutHTML', '<link href="/site'));
+      it('includes page.css on sub-page', test.contain('aboutHTML', '<link href="/about/page'));
+    });
+
+    context('Data', function () {
+      it('makes site.js available to all pages', function () {
+        [this.indexHTML, this.aboutHTML, this.contactHTML].forEach(function (html) {
+          expect(html).to.contain('SITE_DATA');
+        });
+      });
+
+      it('makes data.js available to index.html', test.contain('indexHTML', 'INDEX_PAGE_DATA'));
+      it('makes about/data.json available to about/index.html', test.contain('aboutHTML', 'ABOUT_PAGE_DATA'));
+      it('makes contact/data.js available to contact/index.html async', test.contain('contactHTML', 'CONTACT_PAGE_DATA'));
+    });
+
+    context('Scss', function () {
+      before(function () {
+        this.siteCss = toString('site.css');
+        this.indexPageCss = toString('page.css');
+        this.aboutPageCss = toString('about/page.css');
+      });
+
+      it('compiles site.css', test.contain('siteCss', 'body{background:red}'));
+      it('compiles page.css', test.contain('indexPageCss', 'p{color:green}'));
+      it('compiles about/page.css', test.contain('aboutPageCss', 'h1{font-size:18px}'));
+    });
+
+    context('Javascript', function () {
+      before(function () {
+        this.siteJS = toString('site.js');
+        this.indexPageJS = toString('page.js');
+        this.aboutPageJS = toString('about/page.js');
+      });
+
+      it('compiles site.js', test.contain('siteJS', 'SITE_JS'));
+      it('compiles page.js', test.contain('indexPageJS', 'PAGE_JS'));
+      it('compiles about/page.js', test.contain('aboutPageJS', 'ABOUT_PAGE_JS'));
+    });
+
+    context('Static', function () {
+      it('moves static files', function () {
+        var files = walkSync(testSitePathDistPath);
+        expect(files).to.include.members(['static/', 'static/foo.txt']);
       });
     });
 
-    it('makes data.js available to index.html', test.contain('indexHTML', 'INDEX_PAGE_DATA'));
-    it('makes about/data.json available to about/index.html', test.contain('aboutHTML', 'ABOUT_PAGE_DATA'));
-    it('makes contact/data.js available to contact/index.html async', test.contain('contactHTML', 'CONTACT_PAGE_DATA'));
   });
 
-  context('Scss', function () {
+  context('Mounted site', function () {
+    var testSitePath = path.join(findup('test'), 'sites/mounted');
+    process.chdir(testSitePath);
+    var distName = 'dist';
+    var testSitePathDistPath = path.join(testSitePath, distName);
+
+    function rmDist (done) { exec('rm -rf '+distName, done); }
+
+    function toString (filepath) {
+      return fs.readFileSync(path.join(testSitePathDistPath, filepath)).toString();
+    }
+
+    before(rmDist);
+
+    before(function (done) {
+      exec('BROCCOLI_TACO_ENV=production ../../../bin/broccoli-taco build '+distName, done);
+    });
+
     before(function () {
-      this.siteCss = toString('site.css');
-      this.indexPageCss = toString('page.css');
-      this.aboutPageCss = toString('about/page.css');
+      this.indexHTML = toString('index.html');
     });
 
-    it('compiles site.css', test.contain('siteCss', 'body{background:red}'));
-    it('compiles page.css', test.contain('indexPageCss', 'p{color:green}'));
-    it('compiles about/page.css', test.contain('aboutPageCss', 'h1{font-size:18px}'));
-  });
+    it('adds path to link-to', test.contain('indexHTML', '<a href="/mounted-path">Index</a>'));
+    it('adds path to js and css assets', test.contain('indexHTML', '<script src="/mounted-path/site-', '<link href="/mounted-path/site-'));
 
-  context('Javascript', function () {
-    before(function () {
-      this.siteJS = toString('site.js');
-      this.indexPageJS = toString('page.js');
-      this.aboutPageJS = toString('about/page.js');
-    });
-
-    it('compiles site.js', test.contain('siteJS', 'SITE_JS'));
-    it('compiles page.js', test.contain('indexPageJS', 'PAGE_JS'));
-    it('compiles about/page.js', test.contain('aboutPageJS', 'ABOUT_PAGE_JS'));
-  });
-
-  context('Static', function () {
-    it('moves static files', function () {
-      var files = walkSync(testAppPathDestPath);
-      expect(files).to.include.members(['static/', 'static/foo.txt']);
-    });
   });
 
 });
