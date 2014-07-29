@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 
+var path = require('path');
 var resolve = require('resolve');
 
 resolve('broccoli-taco', {
   basedir: process.cwd()
 }, function(err, broccoliTacoPath) {
-  var broccoliTaco;
+  var cli;
   if (err) {
-    broccoliTaco = require('../index');
+    cli = require('../lib/cli');
   } else {
-    broccoliTaco = require(broccoliTacoPath);
+    cli = require(path.join(path.dirname(broccoliTacoPath), 'lib/cli'));
   }
-  broccoliTaco.cli();
+  cli();
 });

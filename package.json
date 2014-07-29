@@ -14,14 +14,10 @@
   "license": "MIT",
   "dependencies": {
     "broccoli": "^0.12.3",
-    "broccoli-browserify": "^0.1.0",
-    "broccoli-clean-css": "^0.2.0",
-    "broccoli-fingerprint": "0.0.4",
     "broccoli-handlebars": "0.0.3",
     "broccoli-kitchen-sink-helpers": "^0.2.4",
     "broccoli-merge-trees": "^0.1.4",
     "broccoli-sane-watcher": "0.0.5",
-    "broccoli-sass": "^0.2.1",
     "broccoli-static-compiler": "^0.1.4",
     "chalk": "^0.5.1",
     "clone": "^0.1.17",
@@ -41,6 +37,6 @@
     "chai": "^1.9.1",
     "findup-sync": "^0.1.3",
     "mkdirp": "^0.5.0",
-    "mocha": "^1.20.1"
+    "mocha": "^1.21.3"
   }
 }

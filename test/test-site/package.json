@@ -1,8 +1,0 @@
-{
-  "name": "broccoli-taco",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {
-    "broccoli-taco": "*"
-  }
-}
