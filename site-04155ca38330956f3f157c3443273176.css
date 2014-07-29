@@ -1997,12 +1997,14 @@ body {
   font-size: 18px; }
 
 .navbar-brand {
-  background-size: 60% auto;
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-shadow: 0 1px 4px white;
   font-weight: 700;
   font-family: 'Magra', sans-serif; }
+
+.logo-icon {
+  background-image: url('/static/broccoli-taco-logo.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat; }
 
 .icon-folder, .icon-file {
   background-image: url('/static/folder-icon.svg');
@@ -2039,6 +2041,10 @@ body {
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, color-stop(0%, #fff), color-stop(100%, #abffa3));
   background-image: -webkit-radial-gradient(50% 50%, circle, #fff, #abffa3);
   background-image: radial-gradient(  circle at 50% 50%, #fff, #abffa3); }
+  .hero .logo-icon {
+    width: 280px;
+    height: 128px;
+    display: inline-block; }
   .hero .tagline {
     color: #010a00; }
   .hero .checklist, .hero pre {
@@ -2075,7 +2081,12 @@ body {
 .footer {
   margin-top: 60px;
   border-top: 1px solid #eee;
-  padding: 60px 0 90px; }
+  padding: 60px 0 0; }
+  .footer .logo-icon {
+    display: block;
+    width: 280px;
+    height: 128px;
+    margin: 60px auto 0; }
 
 .nav a {
   font-weight: 700; }
@@ -2175,6 +2186,8 @@ p code {
     font-size: 14px;
     margin-left: -10px;
     margin-right: -10px; }
+    .checklist .checkmark {
+      display: none; }
   .summary {
     text-align: left;
     padding-top: 15px;

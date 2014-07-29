@@ -7,7 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Magra:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 
-    <link href="/site-7cf7154f18c00532030ec06e8334dff3.css" rel="stylesheet" type="text/css">
+    <link href="/site-04155ca38330956f3f157c3443273176.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <header class='header navbar navbar-default'>
@@ -79,6 +79,10 @@
               
                 <li class=''>
                   <a href='#building-a-site'>Building a Site</a>
+                </li>
+              
+                <li class=''>
+                  <a href='#brocfile.js'>Brocfile.js</a>
                 </li>
               
             </ul>
@@ -193,6 +197,18 @@ broccoli-taco serve
 BROCCOLI_TACO_ENV=production broccoli-taco build dist
 </code></pre>
 
+              </section>
+            
+              <section class='sub-section-documentation sub-section-brocfile.js'>
+              <h4 id='brocfile.js'>Brocfile.js</h4>
+              <p>Conguring the site happens in the top-level <code>Brocfile.js</code>. There is currenly 1 option to configure, which is the <code>basePath</code>.  The following configuration could be used to serving the site at a path (i.e. <a href="http://other-site.com/docs">http://other-site.com/docs</a>) instead of the root path. This makes sure assets and link-to helpers render with the correct url.</p>
+<pre><code><span class="hljs-keyword">var</span> Site = <span class="hljs-built_in">require</span>(<span class="hljs-string">'broccoli-taco'</span>);
+<span class="hljs-keyword">var</span> site = <span class="hljs-keyword">new</span> Site();
+
+site.basePath = <span class="hljs-string">'docs'</span>;
+
+<span class="hljs-built_in">module</span>.exports = site.toTree();
+</code></pre>
               </section>
             
           </section>
@@ -474,6 +490,10 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
         <a href="/documentation">Documentation</a>
           &middot;
         <a href='https://github.com/moudy/broccoli-taco'>Github</a>
+
+        <a href='#' class='logo-icon'>
+
+        </a>
       </div>
     </footer>
     <script src="/site-6aeb1ffcef2c9852ebb081eaaac272f7.js"></script>
