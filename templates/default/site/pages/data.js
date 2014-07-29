@@ -1,5 +1,5 @@
 module.exports =  {
   title: 'Home'
-, documentationUrl: 'https://github.com/moudy/broccoli-taco'
+, documentationUrl: 'http://broccoli-taco.com/documentation/'
 };
 

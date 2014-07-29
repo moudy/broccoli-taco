@@ -33,7 +33,8 @@ describe('broccoli-taco build <destination>', function () {
     before(rmDist);
 
     before(function (done) {
-      exec('BROCCOLI_TACO_ENV=production ../../../bin/broccoli-taco build '+distName, done);
+      var localPath = path.join(process.cwd(), 'node_modules');
+      exec('BROCCOLI_TACO_ENV=production NODE_PATH='+localPath+' ../../../bin/broccoli-taco build '+distName, done);
     });
 
     before(function () {
@@ -127,7 +128,8 @@ describe('broccoli-taco build <destination>', function () {
     before(rmDist);
 
     before(function (done) {
-      exec('BROCCOLI_TACO_ENV=production ../../../bin/broccoli-taco build '+distName, done);
+      var localPath = path.join(process.cwd(), 'node_modules');
+      exec('BROCCOLI_TACO_ENV=production NODE_PATH='+localPath+' ../../../bin/broccoli-taco build '+distName, done);
     });
 
     before(function () {
