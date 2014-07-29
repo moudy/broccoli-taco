@@ -19,7 +19,6 @@ describe('broccoli-taco build <destination>', function () {
 
   context('Basic site', function () {
     var testSitePath = path.join(findup('test'), 'sites/basic');
-    process.chdir(testSitePath);
     var distName = 'dist';
     var testSitePathDistPath = path.join(testSitePath, distName);
 
@@ -28,6 +27,8 @@ describe('broccoli-taco build <destination>', function () {
     function toString (filepath) {
       return fs.readFileSync(path.join(testSitePathDistPath, filepath)).toString();
     }
+
+    before(function () { process.chdir(testSitePath); });
 
     before(rmDist);
 
@@ -113,7 +114,6 @@ describe('broccoli-taco build <destination>', function () {
 
   context('Mounted site', function () {
     var testSitePath = path.join(findup('test'), 'sites/mounted');
-    process.chdir(testSitePath);
     var distName = 'dist';
     var testSitePathDistPath = path.join(testSitePath, distName);
 
@@ -123,6 +123,7 @@ describe('broccoli-taco build <destination>', function () {
       return fs.readFileSync(path.join(testSitePathDistPath, filepath)).toString();
     }
 
+    before(function () { process.chdir(testSitePath); });
     before(rmDist);
 
     before(function (done) {
