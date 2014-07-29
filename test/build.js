@@ -17,7 +17,7 @@ var test = {
 
 describe('broccoli-taco build <destination>', function () {
 
-  context('Basic site', function () {
+  describe('Basic site', function () {
     var testSitePath = path.join(findup('test'), 'sites/basic');
     var distName = 'dist';
     var testSitePathDistPath = path.join(testSitePath, distName);
@@ -112,7 +112,7 @@ describe('broccoli-taco build <destination>', function () {
 
   });
 
-  context('Mounted site', function () {
+  describe('Mounted site', function () {
     var testSitePath = path.join(findup('test'), 'sites/mounted');
     var distName = 'dist';
     var testSitePathDistPath = path.join(testSitePath, distName);
