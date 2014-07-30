@@ -21,7 +21,8 @@ module.exports = function () {
 
   var sections = fs.readdirSync(sectionsPath);
 
-  page.tagline = 'Documentation'
+  page.title = 'Documentation'
+  page.tagline = page.title;
   page.subTagline = 'An overview of files, folders, helpers and partials.'
 
 

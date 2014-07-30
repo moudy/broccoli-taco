@@ -1,14 +1,20 @@
 module.exports = {
-  tagline: 'Static Sites Powered by Broccoli'
+
+  title: 'A fast, simple, and flexible static site generator'
+
+, tagline: 'Static Sites Powered by Broccoli'
+
 , checklistItems: [
     'Dynamically generated pages based on data'
   , 'Handlebars templates, layouts, partials, and helpers'
   , 'SCSS, Browserify &amp; asset fingerprinting'
   ]
+
 , summary: {
     heading: 'Create data-driven static sites.'
   , body: 'Broccoli Taco is designed to create data-driven sites with no database. Pages can pull in data (synchronously or asynchronously via Promises) at build time. Arrays of data will generate a page for each item, allowing you to generate an arbitrary number of pages.'
   }
+
 , points: [
     {
       heading: 'Fast'
