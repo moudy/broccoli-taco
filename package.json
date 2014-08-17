@@ -19,6 +19,7 @@
     "broccoli-merge-trees": "^0.1.4",
     "broccoli-sane-watcher": "0.0.5",
     "broccoli-static-compiler": "^0.1.4",
+    "broccoli-unwatched-tree": "^0.1.1",
     "chalk": "^0.5.1",
     "clone": "^0.1.17",
     "commander": "^2.3.0",
