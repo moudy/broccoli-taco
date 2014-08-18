@@ -27,3 +27,17 @@ BROCCOLI_TACO_ENV=production broccoli-taco build dist
 ```
 
 See [broccoli-taco.com](http://broccoli-taco.com) for full docs.
+
+### Contributing
+
+Issues and pull requests are welcome! Tests along with changes are also very welcome.
+
+The best way to develop is to clone the project and then run [npm link](https://www.npmjs.org/doc/cli/npm-link.html) from inside the project folder. Tnen you can create a test site and run `npm link broccoli-taco` to link your project's broccoli-taco depenency to the cloned repo.
+
+Tests can be run with `npm test`.
+
+### Todos/Ideas
+
+- Make CSS preprocessor configurable or optional
+- ES6 module transpiler option for clien-side assets?
+- Refactor setup/teardown of build tests
