@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "broccoli-base64-css": "^0.0.4",
     "broccoli-browserify": "^0.1.0",
     "broccoli-clean-css": "^0.2.0",
     "broccoli-fingerprint": "0.0.4",
