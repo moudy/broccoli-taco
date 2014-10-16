@@ -141,4 +141,41 @@ describe('broccoli-taco build <destination>', function () {
 
   });
 
+  describe('Dynamic site', function () {
+    var testSitePath = path.join(findup('test'), 'sites/dynamic');
+    var distName = 'dist';
+    var testSitePathDistPath = path.join(testSitePath, distName);
+
+    function rmDist (done) { exec('rm -rf '+distName, done); }
+
+    function toString (filepath) {
+      return fs.readFileSync(path.join(testSitePathDistPath, filepath)).toString();
+    }
+
+    before(function () { process.chdir(testSitePath); });
+
+    before(rmDist);
+
+    before(function (done) {
+      var localPath = path.join(process.cwd(), 'node_modules');
+      exec('BROCCOLI_TACO_ENV=production NODE_PATH='+localPath+' ../../../bin/broccoli-taco build '+distName, done);
+    });
+
+    before(function () {
+      this.indexHTML = toString('index.html');
+      this.fooHTML = toString('foo/index.html');
+      this.barHTML = toString('bar/index.html');
+    });
+
+    after(rmDist);
+
+    context('HTML', function () {
+      it('builds the index page', test.contain('indexHTML', 'PAGES/INDEX'));
+      it('builds with delfault layout', test.contain('indexHTML', 'LAYOUTS/DEFAULT'));
+      it('builds dynamic page "foo"', test.contain('fooHTML', 'FOO'));
+      it('builds dynamic page "bar"', test.contain('barHTML', 'BAR'));
+    });
+
+  });
+
 });
