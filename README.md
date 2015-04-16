@@ -34,7 +34,15 @@ Issues and pull requests are welcome! Tests along with changes are also very wel
 
 The best way to develop is to clone the project and then run [npm link](https://www.npmjs.org/doc/cli/npm-link.html) from inside the project folder. Tnen you can create a test site and run `npm link broccoli-taco` to link your project's broccoli-taco depenency to the cloned repo.
 
-Tests can be run with `npm test`.
+Tests can be run with
+
+    cd test/sites/basic/
+    npm install
+    cd test/sites/dynamic/
+    npm install
+    cd test/sites/mounted/
+    npm install
+    npm test
 
 ### Todos/Ideas
 
