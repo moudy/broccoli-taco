@@ -5,7 +5,7 @@
   "repository": "https://github.com/moudy/broccoli-taco",
   "main": "index.js",
   "engines": {
-    "node": "4.7.0"
+    "node": "^6.9.2"
   },
   "bin": {
     "broccoli-taco": "./bin/broccoli-taco"
