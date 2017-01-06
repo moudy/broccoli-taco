@@ -4,6 +4,9 @@
   "description": "Broccoli based static site generator",
   "repository": "https://github.com/moudy/broccoli-taco",
   "main": "index.js",
+  "engines": {
+    "node": "^6.9.2"
+  },
   "bin": {
     "broccoli-taco": "./bin/broccoli-taco"
   },
@@ -16,7 +19,7 @@
     "broccoli": "^0.16.0",
     "broccoli-handlebars": "0.0.6",
     "broccoli-kitchen-sink-helpers": "^0.2.6",
-    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-merge-trees": "0.2.1",
     "broccoli-sane-watcher": "1.0.2",
     "broccoli-static-compiler": "^0.2.1",
     "broccoli-unwatched-tree": "^0.1.1",
